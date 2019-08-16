@@ -125,7 +125,7 @@
 		var/obj/item/weapon/implant/psi_control/implant = thing
 		implant.update_functionality()
 
-	log_and_message_admins("has changed the security level from [previous_security_level.name] to [new_security_level.name].")
+	log_and_message_admins("ha cambiato il livello di allerta da [previous_security_level.name] a [new_security_level.name].")
 	return TRUE
 
 // This proc decreases the current security level, if possible
@@ -183,19 +183,19 @@
 
 /decl/security_level/default/switching_up_to()
 	if(up_description)
-		security_announcement_up.Announce(up_description, "Attention! Alert level elevated to [name]!")
+		security_announcement_up.Announce(up_description, "Attenzione! Livello di Allerta elevato a [name]!")
 	notify_station()
 
 /decl/security_level/default/switching_down_to()
 	if(down_description)
-		security_announcement_down.Announce(down_description, "Attention! Alert level changed to [name]!")
+		security_announcement_down.Announce(down_description, "Attenzione! Livello di Allerta mitigato a [name]!")
 	notify_station()
 
 /decl/security_level/default/proc/notify_station()
 	for(var/obj/machinery/firealarm/FA in SSmachines.machinery)
 		if(FA.z in GLOB.using_map.contact_levels)
 			FA.update_icon()
-	post_status("alert")
+	post_status("allerta")
 
 /decl/security_level/default/code_green
 	name = "code green"
@@ -210,7 +210,7 @@
 	overlay_alarm = "alarm_green"
 	overlay_status_display = "status_display_green"
 
-	down_description = "All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
+	down_description = "Tutte le minacce alla stazione sono terminate. La sicurezza non può esibire armi, le leggi sulla privacy sono ora di nuovo in vigore."
 
 /decl/security_level/default/code_blue
 	name = "code blue"
@@ -226,8 +226,8 @@
 	overlay_alarm = "alarm_blue"
 	overlay_status_display = "status_display_blue"
 
-	up_description = "The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted."
-	down_description = "The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed."
+	up_description = "La stazione ha ricevuto informazioni affidabili in merito a possibili attività ostili a bordo. Lo staff della Sicurezza può esibire le armi. Perquisizioni casuali permesse."
+	down_description = "La minaccia immediata è terminata. La Sicurezza non può più impugnare le armi, che tuttavia possono restare visibili. Le perquisizioni sono ancora permesse."
 
 /decl/security_level/default/code_red
 	name = "code red"
@@ -243,8 +243,8 @@
 
 	psionic_control_level = PSI_IMPLANT_DISABLED
 
-	up_description = "There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised."
-	down_description = "The self-destruct mechanism has been deactivated, there is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised."
+	up_description = "E' stata rilevata una seria minaccia immediata alla stazione. La sicurezza è istruita ad impugnare le armi senza esitare. Le perquisizioni sono autorizzate e consigliate."
+	down_description = "Il meccanismo di autodistruzione è stato disattivato. Tuttavia, è ancora presente una seria minaccia all'integrità della stazione e all'incolumità del suo personale. La sicurezza può ancora impugnare le armi, e le perquisizioni rimangono viabili e consigliate. "
 
 /decl/security_level/default/code_delta
 	name = "code delta"
@@ -263,5 +263,5 @@
 	var/static/datum/announcement/priority/security/security_announcement_delta = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/effects/siren.ogg'))
 
 /decl/security_level/default/code_delta/switching_up_to()
-	security_announcement_delta.Announce("The self-destruct mechanism has been engaged. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.", "Attention! Delta security level reached!")
+	security_announcement_delta.Announce("I meccanismi di autodistruzione sono stati innescati. Tutto l'equipaggio è istruito ad ubbidire qualsiasi ordine assegnato dai Capi Reparto. Ogni violazione può essere punita con l'esecuzione sommaria. Questa non è una esercitazione.", "Attenzione! Contingenza Delta raggiunta!")
 	notify_station()

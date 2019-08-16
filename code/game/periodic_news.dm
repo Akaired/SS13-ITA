@@ -5,49 +5,51 @@
 	var
 		round_time // time of the round at which this should be announced, in seconds
 		message // body of the message
-		author = "NanoTrasen Editor"
+		author = "Editoriale Nanotrasen"
 		channel_name = "Nyx Daily"
 		can_be_redacted = 0
-		message_type = "Story"
+		message_type = "Storia"
 
 	revolution_inciting_event
 
 		paycuts_suspicion
 			round_time = 60*10
-			message = {"Reports have leaked that NanoTrasen is planning to put paycuts into
-						effect on many of its Research Stations in Tau Ceti. Apparently these research
-						stations haven't been able to yield the expected revenue, and thus adjustments
-						have to be made."}
-			author = "Unauthorized"
+			message = {"I rapporti hanno fatto trapelare indizi su come NanoTrasen sta pianificando di
+			            diminuire i pagamenti a su molte delle sue stazioni di ricerca a Tau Ceti.
+			            Apparentemente queste stazioni di ricerca non sono state in grado di produrre le
+			            entrate previste e quindi delle rettifiche devono essere fatte."}
+			author = "Non autorizzato"
 
 		paycuts_confirmation
 			round_time = 60*40
-			message = {"Earlier rumours about paycuts on Research Stations in the Tau Ceti system have
-						been confirmed. Shockingly, however, the cuts will only affect lower tier
-						personnel. Heads of Staff will, according to our sources, not be affected."}
-			author = "Unauthorized"
+			message = {"Le voci precedenti in merito ai tagli agli stipendi nelle stazioni di ricerca di
+						Tau Ceti sono state confermate. A sorpresa, comunque, i tagli sono rivolti solamente
+						al personale di bassa lega. I Capi Dipartimento, secondo le nostre fonti, non saranno
+						coinvolti da nessun taglio."}
+			author = "Non autorizzato"
 
 		human_experiments
 			round_time = 60*90
-			message = {"Unbelievable reports about human experimentation have reached our ears. According
-			 			to a refugee from one of the Tau Ceti Research Stations, their station, in order
-			 			to increase revenue, has refactored several of their facilities to perform experiments
-			 			on live humans, including virology research, genetic manipulation, and \"feeding them
-			 			to the slimes to see what happens\". Allegedly, these test subjects were neither
-			 			humanified monkeys nor volunteers, but rather unqualified staff that were forced into
-			 			the experiments, and reported to have died in a \"work accident\" by NanoTrasen."}
-			author = "Unauthorized"
+			message = {"Incredibili rapporti circa sperimentazione umana hanno attirato la nostra attenzione.
+			 			Secondo un rifugiato da una delle stazioni di ricerca di Tau Ceti, le loro stazioni,
+			 			in modo da aumentare i guadagni, hanno ricommissionato i loro laboratori in modo da
+			 			svolgere esperimenti su umani vivi, includendo la ricerca virologica, geetica e anche
+			 			\"darli da mangiare agli slime per vedere che succede\". Allo stesso modo, queste cavie
+			 			non erano scimmie umanizzate, o neanche volontari, ma piuttosto personale non qualificato
+			 			a cui erano stati forzati gli esperimenti, e che sono stati dichiarati morti a causa di
+			 			un \"infortunio sul lavoro\" da parte di NanoTrasen. Più informazioni a venire."}
+			author = "Non autorizzato"
 
 	bluespace_research
 
 		announcement
 			round_time = 60*20
-			message = {"The new field of research trying to explain several interesting spacetime oddities,
-						also known as \"Bluespace Research\", has reached new heights. Of the several
-						hundred space stations now orbiting in Tau Ceti, fifteen are now specially equipped
-						to experiment with and research Bluespace effects. Rumours have it some of these
-						stations even sport functional \"travel gates\" that can instantly move a whole research
-						team to an alternate reality."}
+			message = {"Un nuovo campo della ricerca che sta cercando di spiegare innumerevoli buchi nello
+						spaziotempo, noto anche come \"Bluespace Research\", ha raggiunto nuove vette. Delle
+						innumerevoli stazioni spaziali in orbita su Tau Ceti, solo quindici sono state scelte
+						per l'assegnazione di speciale equipaggiamento che permetterà di ricercare con la
+						\"Bluespace Research\". Ci sono voci circa le quali alcune di queste riceveranno dei
+						veri e propri \"travel gates\" che gli permetteranno di viaggiare in realtà alternate."}
 
 	random_junk
 
