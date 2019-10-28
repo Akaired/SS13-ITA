@@ -179,23 +179,23 @@
 /datum/movement_handler/mob/physically_restrained/MayMove(var/mob/mover)
 	if(mob.anchored)
 		if(mover == mob)
-			to_chat(mob, "<span class='notice'>You're anchored down!</span>")
+			to_chat(mob, "<span class='notice'>Sei ancorato!</span>")
 		return MOVEMENT_STOP
 
 	if(istype(mob.buckled) && !mob.buckled.buckle_movable)
 		if(mover == mob)
-			to_chat(mob, "<span class='notice'>You're buckled to \the [mob.buckled]!</span>")
+			to_chat(mob, "<span class='notice'>Sei attaccato al \the [mob.buckled]!</span>")
 		return MOVEMENT_STOP
 
 	if(LAZYLEN(mob.pinned))
 		if(mover == mob)
-			to_chat(mob, "<span class='notice'>You're pinned down by \a [mob.pinned[1]]!</span>")
+			to_chat(mob, "<span class='notice'>\a ti tiene attaccato al pavimento! [mob.pinned[1]]!</span>")
 		return MOVEMENT_STOP
 
 	for(var/obj/item/grab/G in mob.grabbed_by)
 		if(G.stop_move())
 			if(mover == mob)
-				to_chat(mob, "<span class='notice'>You're stuck in a grab!</span>")
+				to_chat(mob, "<span class='notice'>Sei bloccato da un grab!</span>")
 			mob.ProcessGrabs()
 			return MOVEMENT_STOP
 
@@ -204,7 +204,7 @@
 			if(M.pulling == mob)
 				if(!M.incapacitated() && mob.Adjacent(M))
 					if(mover == mob)
-						to_chat(mob, "<span class='notice'>You're restrained! You can't move!</span>")
+						to_chat(mob, "<span class='notice'>Sei ammanettato! Non puoi muoverti!</span>")
 					return MOVEMENT_STOP
 				else
 					M.stop_pulling()

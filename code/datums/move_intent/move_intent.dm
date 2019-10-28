@@ -15,27 +15,27 @@
 	return TRUE
 
 /decl/move_intent/creep
-	name = "Creep"
+	name = "Movimento stealth"
 	flags = MOVE_INTENT_DELIBERATE
-	hud_icon_state = "creeping"
+	hud_icon_state = "furtivo"
 
 /decl/move_intent/creep/Initialize()
 	. = ..()
 	move_delay = config.creep_delay
 
 /decl/move_intent/walk
-	name = "Walk"
+	name = "Cammina"
 	flags = MOVE_INTENT_DELIBERATE
-	hud_icon_state = "walking"
+	hud_icon_state = "camminando"
 
 /decl/move_intent/walk/Initialize()
 	. = ..()
 	move_delay = config.walk_delay
 
 /decl/move_intent/run
-	name = "Run"
+	name = "Corri"
 	flags = MOVE_INTENT_EXERTIVE | MOVE_INTENT_QUICK
-	hud_icon_state = "running"
+	hud_icon_state = "correndo"
 
 /decl/move_intent/run/Initialize()
 	. = ..()

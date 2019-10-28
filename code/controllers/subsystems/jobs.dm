@@ -535,15 +535,15 @@ SUBSYSTEM_DEF(jobs)
 			W.buckled_mob = H
 			W.add_fingerprint(H)
 
-	to_chat(H, "<font size = 3><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></font>")
+	to_chat(H, "<font size = 3><B>Tu sei [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></font>")
 
 	if(job.supervisors)
-		to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
+		to_chat(H, "<b>Come [alt_title ? alt_title : rank] rispondi direttamente a [job.supervisors]. Circostanze speciali potrebbero mutare questa gerarchia.</b>")
 
-	to_chat(H, "<b>To speak on your department's radio channel use :h. For the use of other channels, examine your headset.</b>")
+	to_chat(H, "<b>Per parlare nel canale radio del tuo dipartimento, usa :h. Per usare altri canali, esamina il tuo headset.</b>")
 
 	if(job.req_admin_notify)
-		to_chat(H, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
+		to_chat(H, "<b>Stai utilizzando un lavoro importante per il progresso del gioco. Se devi disconnetterti, contatta gli admin usando la funzione adminhelp.</b>")
 
 	//Gives glasses to the vision impaired
 	if(H.disabilities & NEARSIGHTED)
@@ -555,7 +555,7 @@ SUBSYSTEM_DEF(jobs)
 	BITSET(H.hud_updateflag, ID_HUD)
 	BITSET(H.hud_updateflag, IMPLOYAL_HUD)
 	BITSET(H.hud_updateflag, SPECIALROLE_HUD)
-	
+
 	job.post_equip_rank(H, alt_title || rank)
 
 	return H

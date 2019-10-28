@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(vote)
 		var/next_allowed_time = (last_started_time + config.vote_delay)
 		if(next_allowed_time > world.time)
 			return FALSE
-	
+
 	var/datum/vote/new_vote = new vote_type
 	if(!new_vote.setup(creator, automatic))
 		return FALSE
@@ -87,11 +87,11 @@ SUBSYSTEM_DEF(vote)
 	voting |= C
 
 	. = list()
-	. += "<html><head><title>Voting Panel</title></head><body>"
+	. += "<html><head><title>Pannello Voto</title></head><body>"
 	if(active_vote)
 		. += active_vote.interface(C.mob)
 		if(admin)
-			. += "(<a href='?src=\ref[src];cancel=1'>Cancel Vote</a>) "
+			. += "(<a href='?src=\ref[src];cancel=1'>Cancella Voto</a>) "
 	else
 		. += "<h2>Start a vote:</h2><hr><ul>"
 		for(var/vote_type in vote_prototypes)
@@ -165,7 +165,7 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/restart_world()
 	set waitfor = FALSE
 
-	to_world("World restarting due to vote...")
+	to_world("Riavviando la partita in seguito al voto...")
 	SSstatistics.set_field_details("end_error","restart vote")
 	sleep(50)
 	log_game("Rebooting due to restart vote")
@@ -190,6 +190,6 @@ SUBSYSTEM_DEF(vote)
 	set name = "Vote"
 
 	if(GAME_STATE < RUNLEVEL_LOBBY)
-		to_chat(src, "It's too soon to do any voting!")
+		to_chat(src, "E' troppo presto per avviare qualsiasi voto!")
 		return
 	SSvote.show_panel(src)
