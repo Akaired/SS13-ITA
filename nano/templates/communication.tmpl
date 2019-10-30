@@ -12,9 +12,9 @@
 		<div class=itemGroup>
 			<div class=item>{{:helper.link('Message list', null, {'action' : 'sw_menu', 'target' : 2}, !data.net_comms ? 'disabled' : null)}} </div>
 			<div class=item>{{if data.emagged}}
-				{{:helper.link('Send an emergency message to [UNKNOWN]', null, {'action' : 'message', 'target' : 'emagged'}, data.isAI || !data.net_comms ? 'disabled' : null)}}
+				{{:helper.link('Invia un messaggio di emergenza a [UNKNOWN]', null, {'action' : 'message', 'target' : 'emagged'}, data.isAI || !data.net_comms ? 'disabled' : null)}}
 			{{else}}
-				{{:helper.link('Send an emergency message to ' + data.boss_short, null, {'action' : 'message', 'target' : 'regular'}, data.isAI || !data.net_comms ? 'disabled' : null)}}
+				{{:helper.link('Invia un messaggio di emergenza a ' + data.boss_short, null, {'action' : 'message', 'target' : 'regular'}, data.isAI || !data.net_comms ? 'disabled' : null)}}
 			{{/if}} </div>
 		</div>
 
@@ -83,10 +83,10 @@
                 <b>Alert:</b>
             </div>
             <div class="itemContent">
-                {{:helper.link('None',                   'alert',     {'action' : 'setstatus', 'target' : 'image', 'image' : 'default'})}}
-                {{:helper.link('Current Security Level', 'alert',     {'action' : 'setstatus', 'target' : 'alert'})}}
+                {{:helper.link('Nessuno',                   'alert',     {'action' : 'setstatus', 'target' : 'image', 'image' : 'default'})}}
+                {{:helper.link('Livello di Allerta Attuale', 'alert',     {'action' : 'setstatus', 'target' : 'alert'})}}
                 {{:helper.link('Lockdown',               'caution',   {'action' : 'setstatus', 'target' : 'image', 'image' : 'lockdown'})}}
-                {{:helper.link('Biohazard',              'radiation', {'action' : 'setstatus', 'target' : 'image', 'image' : 'biohazard'})}}
+                {{:helper.link('Bioazzardo',              'radiation', {'action' : 'setstatus', 'target' : 'image', 'image' : 'biohazard'})}}
             </div>
             {{:helper.link('Back',                   null, {'action' : 'sw_menu', 'target' : 1})}}
         </div>
@@ -114,5 +114,5 @@
 		<div class=item>{{:helper.link('Back', null, {'action' : 'sw_menu', 'target' : 1})}}</div>
 	{{/if}}
 {{else}}
-	<big>You are unauthorised.</big>
+	<big>Non sei autorizzato.</big>
 {{/if}}

@@ -14,21 +14,21 @@
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
 
-	station_name  = "SEV Torch"
-	station_short = "Torch"
+	station_name  = "SEV Torcia"
+	station_short = "Torcia"
 	dock_name     = "TBD"
-	boss_name     = "Expeditionary Command"
-	boss_short    = "Command"
-	company_name  = "Sol Central Government"
+	boss_name     = "Comando Spedizionario"
+	boss_short    = "Comando"
+	company_name  = "Governo Centrale del Sistema Solare"
 	company_short = "SolGov"
 
 	map_admin_faxes = list("Corporate Central Office")
 
 	//These should probably be moved into the evac controller...
-	shuttle_docked_message = "Attention all hands: Jump preparation complete. The bluespace drive is now spooling up, secure all stations for departure. Time to jump: approximately %ETD%."
-	shuttle_leaving_dock = "Attention all hands: Jump initiated, exiting bluespace in %ETA%."
-	shuttle_called_message = "Attention all hands: Jump sequence initiated. Transit procedures are now in effect. Jump in %ETA%."
-	shuttle_recall_message = "Attention all hands: Jump sequence aborted, return to normal operating conditions."
+	shuttle_docked_message = "Attenzione, equipaggio: Preparazione al salto all'iperspazio completata. Il bluespace drive si sta scaldando, tutte le stazioni, prepararsi al salto. Tempo al salto: approssimatamente %ETD%."
+	shuttle_leaving_dock = "Attenzione, equipaggio: INGRESSO NELL'IPERSPAZIO, salto completato in: %ETA%."
+	shuttle_called_message = "Attenzione, equipaggio: Sequenza di salto nell'iperspazio avviata. Le procedure di transito sono in corso. Salto in %ETA%."
+	shuttle_recall_message = "Attenzione, equipaggio: Sequenza di salto nell'iperspazio abortita, ritornare alle normali procedure di bordo."
 
 	evac_controller_type = /datum/evacuation_controller/starship
 

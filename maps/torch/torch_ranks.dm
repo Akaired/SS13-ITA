@@ -100,7 +100,7 @@
  */
 
 /datum/mil_branch/expeditionary_corps
-	name = "Expeditionary Corps"
+	name = "Corpi Spedizionari"
 	name_short = "SCGEC"
 	email_domain = "torch.ec.scg"
 
@@ -130,7 +130,7 @@
 						SKILL_EVA     = SKILL_BASIC)
 
 /datum/mil_branch/fleet
-	name = "Fleet"
+	name = "Flotta"
 	name_short = "SCGF"
 	email_domain = "torch.fleet.mil"
 
@@ -183,7 +183,7 @@
 						SKILL_EVA     = SKILL_BASIC)
 
 /datum/mil_branch/army
-	name = "Army"
+	name = "Esercito"
 	name_short = "SCGA"
 	email_domain = "army.mil"
 
@@ -219,7 +219,7 @@
 	                    SKILL_COMBAT  = SKILL_BASIC)
 
 /datum/mil_branch/civilian
-	name = "Civilian"
+	name = "Civile"
 	name_short = "Civ"
 	email_domain = "freemail.net"
 
@@ -236,7 +236,7 @@
 	)
 
 /datum/mil_branch/solgov
-	name = "SolGov Employee"
+	name = "Impiegato SolGov"
 	name_short = "SCG"
 	email_domain = "torch.scg"
 
@@ -253,7 +253,7 @@
 	)
 
 /datum/mil_branch/terran
-	name = "Independent Navy"
+	name = "Marina Indipendente"
 	name_short = "ICCGN"
 	email_domain = "gilgamesh.navy.mil"
 
@@ -293,145 +293,145 @@
  */
 
 /datum/mil_rank/fleet/e1
-	name = "Crewman Recruit"
+	name = "Recluta di Marina"
 	name_short = "CR"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 1
 
 /datum/mil_rank/fleet/e2
-	name = "Crewman Apprentice"
+	name = "Apprendista Cadetto"
 	name_short = "CA"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e2, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 2
 
 /datum/mil_rank/fleet/e3
-	name = "Crewman"
+	name = "Cadetto"
 	name_short = "CN"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e3, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 3
 
 /datum/mil_rank/fleet/e4
-	name = "Petty Officer Third Class"
+	name = "Brigadiere Guardiamarina"
 	name_short = "PO3"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e4, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 4
 
 /datum/mil_rank/fleet/e5
-	name = "Petty Officer Second Class"
+	name = "Sottufficiale"
 	name_short = "PO2"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 5
 
 /datum/mil_rank/fleet/e6
-	name = "Petty Officer First Class"
+	name = "Sottufficiale Scelto"
 	name_short = "PO1"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 6
 
 /datum/mil_rank/fleet/e7
-	name = "Chief Petty Officer"
+	name = "Sottufficiale Capo"
 	name_short = "CPO"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 7
 
 /datum/mil_rank/fleet/e8
-	name = "Senior Chief Petty Officer"
+	name = "Sottufficiale Capo Veterano"
 	name_short = "SCPO"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e8, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 8
 
 /datum/mil_rank/fleet/e9
-	name = "Master Chief Petty Officer"
+	name = "Mastro Capo di Comando"
 	name_short = "MCPO"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 9
 
 /datum/mil_rank/fleet/e9_alt1
-	name = "Command Master Chief Petty Officer"
+	name = "Mastro di Comando della Flotta Ammiraglia"
 	name_short = "CMCPO"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt1, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 9
 
 /datum/mil_rank/fleet/e9_alt2
-	name = "Fleet Master Chief Petty Officer"
+	name = "Maestro di Flotta Sottufficiale Capo"
 	name_short = "FLTCM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt2, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 9
 
 /datum/mil_rank/fleet/e9_alt3
-	name = "Force Master Chief Petty Officer"
+	name = "Mastro di Forza Capo Sottufficiale di Flotta"
 	name_short = "FORCM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt3, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 9
 
 /datum/mil_rank/fleet/e9_alt4
-	name = "Master Chief Petty Officer of the Fleet"
+	name = "Maestro Capo Sottufficiale della Flotta"
 	name_short = "MCPOF"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e9_alt4, /obj/item/clothing/accessory/solgov/specialty/enlisted)
 	sort_order = 9
 
 /datum/mil_rank/fleet/o1
-	name = "Ensign"
+	name = "Guardiamarina"
 	name_short = "ENS"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 11
 
 /datum/mil_rank/fleet/o2
-	name = "Sub-lieutenant"
+	name = "Sottotenente"
 	name_short = "SLT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer/o2, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 12
 
 /datum/mil_rank/fleet/o3
-	name = "Lieutenant"
+	name = "Tenente"
 	name_short = "LT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer/o3, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 13
 
 /datum/mil_rank/fleet/o4
-	name = "Lieutenant Commander"
+	name = "Tenente Comandante"
 	name_short = "LCDR"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer/o4, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 14
 
 /datum/mil_rank/fleet/o5
-	name = "Commander"
+	name = "Comandante"
 	name_short = "CDR"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer/o5, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 15
 
 /datum/mil_rank/fleet/o6
-	name = "Captain"
+	name = "Capitano"
 	name_short = "CAPT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/officer/o6, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 16
 
 /datum/mil_rank/fleet/o7
-	name = "Commodore"
+	name = "Commodoro"
 	name_short = "CDRE"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/flag, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 17
 
 /datum/mil_rank/fleet/o8
-	name = "Rear Admiral"
+	name = "Ammiraglio di Retro"
 	name_short = "RADM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/flag/o8, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 18
 
 /datum/mil_rank/fleet/o9
-	name = "Vice Admiral"
+	name = "Vice Ammiraglio"
 	name_short = "VADM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/flag/o9, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 19
 
 /datum/mil_rank/fleet/o10
-	name = "Admiral"
+	name = "Ammiraglio"
 	name_short = "ADM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/flag/o10, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 20
 
 /datum/mil_rank/fleet/o10_alt
-	name = "Fleet Admiral"
+	name = "Ammiraglio di Flotta"
 	name_short = "FADM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/fleet/flag/o10_alt, /obj/item/clothing/accessory/solgov/specialty/officer)
 	sort_order = 20
@@ -442,55 +442,55 @@
  *  =====
  */
 /datum/mil_rank/ec/e1
-	name = "Apprentice Explorer"
+	name = "Apprendista Esploratore"
 	name_short = "AXPL"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted)
 	sort_order = 1
 
 /datum/mil_rank/ec/e3
-	name = "Explorer"
+	name = "Esploratore"
 	name_short = "XPL"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted/e3)
 	sort_order = 3
 
 /datum/mil_rank/ec/e5
-	name = "Senior Explorer"
+	name = "Senior Esploratore"
 	name_short = "SXPL"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted/e5)
 	sort_order = 5
 
 /datum/mil_rank/ec/e7
-	name = "Chief Explorer"
+	name = "Capo Esploratore"
 	name_short = "CXPL"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/enlisted/e7)
 	sort_order = 7
 
 /datum/mil_rank/ec/o1
-	name = "Ensign"
+	name = "Guardiamarina"
 	name_short = "ENS"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/officer)
 	sort_order = 11
 
 /datum/mil_rank/ec/o3
-	name = "Lieutenant"
+	name = "Tenente"
 	name_short = "LT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/officer/o3)
 	sort_order = 13
 
 /datum/mil_rank/ec/o5
-	name = "Commander"
+	name = "Comandante"
 	name_short = "CDR"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/officer/o5)
 	sort_order = 15
 
 /datum/mil_rank/ec/o6
-	name = "Captain"
+	name = "Capitano"
 	name_short = "CAPT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/officer/o6)
 	sort_order = 16
 
 /datum/mil_rank/ec/o8
-	name = "Admiral"
+	name = "Ammiraglio"
 	name_short = "ADM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/ec/officer/o8)
 	sort_order = 18
@@ -500,139 +500,139 @@
  *  ====
  */
 /datum/mil_rank/army/e1
-	name = "Private"
+	name = "Recluta"
 	name_short = "PVT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted)
 	sort_order = 1
 
 /datum/mil_rank/army/e2
-	name = "Private Second Class"
+	name = "Soldato"
 	name_short = "PV2"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e2)
 	sort_order = 2
 
 /datum/mil_rank/army/e3
-	name = "Private First Class"
+	name = "Soldato Scelto"
 	name_short = "PV1"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e3)
 	sort_order = 3
 
 /datum/mil_rank/army/e4
-	name = "Corporal"
+	name = "Caporale"
 	name_short = "CPL"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e4)
 	sort_order = 4
 
 /datum/mil_rank/army/e5
-	name = "Sergeant"
+	name = "Sergente"
 	name_short = "SGT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e5)
 	sort_order = 5
 
 /datum/mil_rank/army/e6
-	name = "Staff Sergeant"
+	name = "Sergente di Truppa"
 	name_short = "SSG"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e6)
 	sort_order = 6
 
 /datum/mil_rank/army/e7
-	name = "Sergeant First Class"
+	name = "Sergente di Prima Classe"
 	name_short = "SFC"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e7)
 	sort_order = 7
 
 /datum/mil_rank/army/e8
-	name = "Master Sergeant"
+	name = "Mastro Sergente"
 	name_short = "MSG"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e8)
 	sort_order = 8
 
 /datum/mil_rank/army/e8_alt
-	name = "First Sergeant"
+	name = "Primo Sergente"
 	name_short = "1SG"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e8_alt)
 	sort_order = 8
 
 /datum/mil_rank/army/e9
-	name = "Sergeant Major"
+	name = "Sergente Maggiore"
 	name_short = "SGM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e9)
 	sort_order = 9
 
 /datum/mil_rank/army/e9_alt1
-	name = "Command Sergeant Major"
+	name = "Sergente Maggiore di Comando"
 	name_short = "CSM"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_alt1)
 	sort_order = 9
 
 /datum/mil_rank/army/e9_alt2
-	name = "Sergeant Major of the Army"
+	name = "Sergente Maggiore d'Armata"
 	name_short = "SMA"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/enlisted/e9_alt2)
 	sort_order = 9
 
 /datum/mil_rank/army/o1
-	name = "Second Lieutenant"
+	name = "Secondo Tenente"
 	name_short = "2LT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/officer)
 	sort_order = 11
 
 /datum/mil_rank/army/o2
-	name = "First Lieutenant"
+	name = "Primo Tenente"
 	name_short = "1LT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/officer/o2)
 	sort_order = 12
 
 /datum/mil_rank/army/o3
-	name = "Captain"
+	name = "Capitano"
 	name_short = "CPT"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/officer/o3)
 	sort_order = 13
 
 /datum/mil_rank/army/o4
-	name = "Major"
+	name = "Maggiore"
 	name_short = "MAJ"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/officer/o4)
 	sort_order = 14
 
 /datum/mil_rank/army/o5
-	name = "Lieutenant Colonel"
+	name = "Tenente Colonnello"
 	name_short = "LTC"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/officer/o5)
 	sort_order = 15
 
 /datum/mil_rank/army/o6
-	name = "Colonel"
+	name = "Colonnello"
 	name_short = "COL"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/officer/o6)
 	sort_order = 16
 
 /datum/mil_rank/army/o7
-	name = "Brigadier General"
+	name = "Brigadiere Generale"
 	name_short = "BG"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/flag)
 	sort_order = 17
 
 /datum/mil_rank/army/o8
-	name = "Major General"
+	name = "Maggiore Generale"
 	name_short = "MG"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/flag/o8)
 	sort_order = 18
 
 /datum/mil_rank/army/o9
-	name = "Lieutenant General"
+	name = "Tenente Generale"
 	name_short = "LTG"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/flag/o9)
 	sort_order = 19
 
 /datum/mil_rank/army/o10
-	name = "General"
+	name = "Generale"
 	name_short = "GEN"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/flag/o10)
 	sort_order = 20
 
 /datum/mil_rank/army/o10_alt
-	name = "General of the Army"
+	name = "Generale d'Armata"
 	name_short = "GA"
 	accessory = list(/obj/item/clothing/accessory/solgov/rank/army/flag/o10_alt)
 	sort_order = 20
@@ -676,103 +676,103 @@
  */
 
 /datum/mil_rank/terran/e1
-	name = "Sailor Recruit"
+	name = "Recluta"
 	name_short = "SlrRct"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/enlisted)
 	sort_order = 1
 
 /datum/mil_rank/terran/e3
-	name = "Sailor"
+	name = "Allievo"
 	name_short = "Slr"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/enlisted/e3)
 	sort_order = 3
 
 /datum/mil_rank/terran/e4
-	name = "Bosman"
+	name = "Marinaio"
 	name_short = "Bsn"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/enlisted/e4)
 	sort_order = 4
 
 /datum/mil_rank/terran/e6
-	name = "Starszy Bosman"
+	name = "Marinaio Stellato"
 	name_short = "SBsn"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/enlisted/e6)
 	sort_order = 6
 
 /datum/mil_rank/terran/e7
-	name = "Glavny Starshina"
+	name = "Allievo Guardiamarina"
 	name_short = "GStr"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/enlisted/e7)
 	sort_order = 7
 
 /datum/mil_rank/terran/e9
-	name = "Michman"
+	name = "Commodoro"
 	name_short = "Mch"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/enlisted/e9)
 	sort_order = 9
 
 /datum/mil_rank/terran/e9_alt1
-	name = "Michman of the Independent Navy"
+	name = "Commodoro della Marina Indipedente"
 	name_short = "MchNvy"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/enlisted/e9_alt1)
 	sort_order = 9
 
 /datum/mil_rank/terran/o1
-	name = "Ensign"
+	name = "Guardiamarina"
 	name_short = "ENS"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/officer)
 	sort_order = 11
 
 /datum/mil_rank/terran/o2
-	name = "Leytenant"
+	name = "Sottotenente"
 	name_short = "Lyt"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/officer/o2)
 	sort_order = 12
 
 /datum/mil_rank/terran/o3
-	name = "Starshy Leytenant"
+	name = "Sottotenente Stellato"
 	name_short = "SLyt"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/officer/o3)
 	sort_order = 13
 
 /datum/mil_rank/terran/o4
-	name = "Corvette-Komandor"
+	name = "Comandante di Corvette"
 	name_short = "CvtKdr"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/officer/o4)
 	sort_order = 14
 
 /datum/mil_rank/terran/o5
-	name = "Komandor"
+	name = "Comandante"
 	name_short = "Kdr"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/officer/o5)
 	sort_order = 15
 
 /datum/mil_rank/terran/o6
-	name = "Kapitan"
+	name = "Capitano"
 	name_short = "Kpt"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/officer/o6)
 	sort_order = 16
 
 /datum/mil_rank/terran/o7
-	name = "Kontradmiral"
+	name = "Contrammiraglio"
 	name_short = "KtrAdm"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/flag)
 	sort_order = 17
 
 /datum/mil_rank/terran/o8
-	name = "Wiceadmiral"
+	name = "Vice-ammiraglio"
 	name_short = "WcAdm"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/flag/o8)
 	sort_order = 18
 
 /datum/mil_rank/terran/o9
-	name = "Admiral"
+	name = "Ammiraglio"
 	name_short = "Adm"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/flag/o9)
 	sort_order = 19
 
 /datum/mil_rank/terran/o10
-	name = "Admiral of the Independent Navy"
+	name = "Ammiraglio Spremo"
 	name_short = "AdmNvy"
 	accessory = list(/obj/item/clothing/accessory/terran/rank/navy/flag/o10)
 	sort_order = 20
