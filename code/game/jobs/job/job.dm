@@ -74,7 +74,7 @@
 	if (required_language)
 		H.add_language(required_language)
 		H.set_default_language(all_languages[required_language])
-	
+
 	if (!H.languages.len)
 		H.add_language(LANGUAGE_SPACER)
 		H.set_default_language(all_languages[LANGUAGE_SPACER])
@@ -139,16 +139,16 @@
 		return // You are too poor for an account.
 
 	//give them an account in the station database
-	var/datum/money_account/M = create_account("[H.real_name]'s account", H.real_name, money_amount)
+	var/datum/money_account/M = create_account(" Il conto bancario di [H.real_name]", H.real_name, money_amount)
 	if(H.mind)
 		var/remembered_info = ""
-		remembered_info += "<b>Your account number is:</b> #[M.account_number]<br>"
-		remembered_info += "<b>Your account pin is:</b> [M.remote_access_pin]<br>"
-		remembered_info += "<b>Your account funds are:</b> T[M.money]<br>"
+		remembered_info += "<b>Il numero del tuo conto bancario è:</b> #[M.account_number]<br>"
+		remembered_info += "<b>Il tuo pin è:</b> [M.remote_access_pin]<br>"
+		remembered_info += "<b>Nel tuo conto hai:</b> T[M.money]<br>"
 
 		if(M.transaction_log.len)
 			var/datum/transaction/T = M.transaction_log[1]
-			remembered_info += "<b>Your account was created:</b> [T.time], [T.date] at [T.get_source_name()]<br>"
+			remembered_info += "<b>Il tuo conto bancario è stato creato:</b> [T.time], [T.date] at [T.get_source_name()]<br>"
 		H.mind.store_memory(remembered_info)
 		H.mind.initial_account = M
 
@@ -196,7 +196,7 @@
 /datum/job/proc/is_restricted(var/datum/preferences/prefs, var/feedback)
 
 	if(minimum_character_age && (prefs.age < minimum_character_age))
-		to_chat(feedback, "<span class='boldannounce'>Not old enough. Minimum character age is [minimum_character_age].</span>")
+		to_chat(feedback, "<span class='boldannounce'>Non abbastanza anziano. L'età minima è [minimum_character_age].</span>")
 		return TRUE
 
 	if(!isnull(allowed_branches) && (!prefs.branches[title] || !is_branch_allowed(prefs.branches[title])))

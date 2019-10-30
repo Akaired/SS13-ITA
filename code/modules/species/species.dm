@@ -53,7 +53,7 @@
 
 	var/mob_size	= MOB_MEDIUM
 	var/strength    = STR_MEDIUM
-	var/show_ssd = "fast asleep"
+	var/show_ssd = "addormentato"
 	var/virus_immune
 	var/short_sighted                         // Permanent weldervision.
 	var/light_sensitive                       // Ditto, but requires sunglasses to fix
@@ -99,10 +99,10 @@
 	var/gibbed_anim = "gibbed-h"
 	var/dusted_anim = "dust-h"
 	var/death_sound
-	var/death_message = "seizes up and falls limp, their eyes dead and lifeless..."
-	var/knockout_message = "collapses, having been knocked unconscious."
-	var/halloss_message = "slumps over, too weak to continue fighting..."
-	var/halloss_message_self = "The pain is too severe for you to keep going..."
+	var/death_message = "cade atterra paralizzato, i suoi occhi spenti e senza vita..."
+	var/knockout_message = "collassa, essendo stato fatto svenire."
+	var/halloss_message = "cade al suolo, troppo debole per continuare a lottare..."
+	var/halloss_message_self = "Il dolore è troppo per continuare..."
 
 	var/limbs_are_nonsolid
 	var/spawns_with_stack = 0

@@ -8,8 +8,8 @@
 
 /mob/verb/show_goals_verb()
 
-	set name = "Show Goals"
-	set desc = "Shows your round goals."
+	set name = "Mostra Goals"
+	set desc = "Mostra i tuoi goals."
 	set category = "IC"
 
 	show_goals(TRUE, TRUE)

@@ -28,7 +28,7 @@ client
 			if(GLOB.end_credits_song == null)
 				var/title_song = pick('sound/music/THUNDERDOME.ogg', 'sound/music/europa/Chronox_-_03_-_In_Orbit.ogg', 'sound/music/europa/asfarasitgets.ogg')
 				sound_to(mob, sound(title_song, wait = 0, volume = 40, channel = GLOB.lobby_sound_channel))
-			else if(get_preference_value(/datum/client_preference/play_admin_midis) == GLOB.PREF_YES)				
+			else if(get_preference_value(/datum/client_preference/play_admin_midis) == GLOB.PREF_YES)
 				sound_to(mob, sound(GLOB.end_credits_song, wait = 0, volume = 40, channel = GLOB.lobby_sound_channel))
 	sleep(50)
 	var/list/_credits = credits
@@ -100,19 +100,19 @@ client
 	var/chunksize = 0
 	if(!GLOB.end_credits_title)
 		/* Establish a big-ass list of potential titles for the "episode". */
-		possible_titles += "THE [pick("DOWNFALL OF", "RISE OF", "TROUBLE WITH", "FINAL STAND OF", "DARK SIDE OF", "DESOLATION OF", "DESTRUCTION OF", "CRISIS OF")]\
-							 [pick("SPACEMEN", "HUMANITY", "DIGNITY", "SANITY", "THE CHIMPANZEES", "THE VENDOMAT PRICES", "GIANT ARMORED", "THE GAS JANITOR",\
-							"THE SUPERMATTER CRYSTAL", "MEDICAL", "ENGINEERING", "SECURITY", "RESEARCH", "THE SERVICE DEPARTMENT", "COMMAND", "THE EXPLORERS", "THE PATHFINDER",\
+		possible_titles += "LA [pick("CADUTA DI", "NASCITA DI", "SCONFITTA CON", "BATTAGLIA FINALE DI", "FACCIA OSCURA DI", "DESOLAZIONE DI", "DISTRUZIONE DI", "CRISI DI")]\
+							 [pick("ASTRONAUTI", "ESSERI UMANI", "ONORE", "PAURA", "SCIMMIONI", "PIANETI INESPLORATI", "GIGANTI CORAZZATI", "SPAZZINI GALATTICI",\
+							"URANIO IMPOVERITO", "MEDICINAL", "INGEGNERIA", "SICUREZZA", "RICERCA", "PERSONALE DI SERVIZIO", "COMANDO", "ESPLORATORI", "CAPO BRANCO",\
 							"[uppertext(GLOB.using_map.station_name)]")]"
-		possible_titles += "THE CREW GETS [pick("RACIST", "PICKLED", "AN INCURABLE DISEASE", "PIZZA", "A VALUABLE HISTORY LESSON", "A BREAK", "HIGH", "TO LIVE", "TO RELIVE THEIR CHILDHOOD", "EMBROILED IN CIVIL WAR", "A BAD HANGOVER", "SERIOUS ABOUT [pick("DRUG ABUSE", "CRIME", "PRODUCTIVITY", "ANCIENT AMERICAN CARTOONS", "SPACEBALL", "DECOMPRESSION PROCEDURES")]")]"
-		possible_titles += "THE CREW LEARNS ABOUT [pick("LOVE", "DRUGS", "THE DANGERS OF MONEY LAUNDERING", "XENIC SENSITIVITY", "INVESTMENT FRAUD", "KELOTANE ABUSE", "RADIATION PROTECTION", "SACRED GEOMETRY", "STRING THEORY", "ABSTRACT MATHEMATICS", "[pick("UNATHI", "SKRELLIAN", "DIONAN", "KHAARMANI", "VOX", "SERPENTID")] MATING RITUALS", "ANCIENT CHINESE MEDICINE")]"
+		possible_titles += "L'EQUIPAGGIO DIVIENE: [pick("RAZZISTA", "OMOSESSUALE", "INFETTO", "PIZZA", "PULITO", "DISOCCUPATO", "DROGATO", "NON IN VITA", "ANORESSICO", "STRONCATO DALLA GUERRA CIVILE", "IN UN BRUTTO HANGOVER", "SERIAMENTE INTERESSATO A [pick("ABUSARE DROGHE", "CRIMINE", "LAVORO DURO", "RUBARE DAGLI ARMADIETTI", "SPACEBALL", "DECOMPRESSIONE ATMOSFERICA")]")]"
+		possible_titles += "L'EQUIPAGGIO SCOPRE: [pick("AMORE", "DROGHE", "I PERICOLI DEL DENARO SPORCO", "SENZAZIONI PERIANALI", "FRODI ASSICURATIVE", "ABUSI DI KELOTANO", "PROTEZIONE DALLE RADIAZIONI", "GEOMETRIA SACRA", "TEORIA DELLE STRINGHE", "MATEMATICA ASTRATTA", "RITUALI DI ACCOPPIAMENTO [pick("AFRICANI", "EUROPEI", "ARABI", "CINESI", "ASIATICI", "AMERICANI")]", "ANTICA MEDICINA CINESE")]"
 		possible_titles += "A VERY [pick("CORPORATE", "NANOTRASEN", "FLEET", "HAPHAESTUS", "DAIS", "XENOLIFE", "EXPEDITIONARY", "DIONA", "PHORON", "MARTIAN", "SERPENTID")] [pick("CHRISTMAS", "EASTER", "HOLIDAY", "WEEKEND", "THURSDAY", "VACATION")]"
-		possible_titles += "[pick("GUNS, GUNS EVERYWHERE", "THE LITTLEST ARMALIS", "WHAT HAPPENS WHEN YOU MIX MAINTENANCE DRONES AND COMMERCIAL-GRADE PACKING FOAM", "ATTACK! ATTACK! ATTACK!", "SEX BOMB", "THE LEGEND OF THE ALIEN ARTIFACT: PART [pick("I","II","III","IV","V","VI","VII","VIII","IX", "X", "C","M","L")]")]"
+		possible_titles += "[pick("ARMI, ARMI OVUNQUE", "LE RAGAZZE DELLO SPOGLIATOIO DEL PONTE 4", "COSA ACCADE QUANDO UNISCI MONOSSIDO DI CARBONIO E TROPPO ALCOOL", "ATTACCO! ATTACCO! ATTACCO!", "SEX BOMB", "LA [pick("GUERRA","TREGUA","VITTORIA","SCONFITTA","BATTAGLIA","FESTA","CELEBRAZIONE")] PARTE [pick("I","II","III","IV","V","VI","VII","VIII","IX", "X", "C","M","L")]")]"
 		possible_titles += "[pick("SPACE", "SEXY", "DRAGON", "WARLOCK", "LAUNDRY", "GUN", "ADVERTISING", "DOG", "CARBON MONOXIDE", "NINJA", "WIZARD", "SOCRATIC", "JUVENILE DELIQUENCY", "POLITICALLY MOTIVATED", "RADTACULAR SICKNASTY")] [pick("QUEST", "FORCE", "ADVENTURE")]"
 		possible_titles += "[pick("THE DAY [uppertext(GLOB.using_map.station_short)] STOOD STILL", "HUNT FOR THE GREEN WEENIE", "ALIEN VS VENDOMAT", "SPACE TRACK")]"
-		titles += "<center><h1>EPISODE [rand(1,1000)]<br>[pick(possible_titles)]<h1></h1></h1></center>"
+		titles += "<center><h1>EPISODIO [rand(1,1000)]<br>[pick(possible_titles)]<h1></h1></h1></center>"
 	else
-		titles += "<center><h1>EPISODE [rand(1,1000)]<br>[GLOB.end_credits_title]<h1></h1></h1></center>"
+		titles += "<center><h1>EPISODIO [rand(1,1000)]<br>[GLOB.end_credits_title]<h1></h1></h1></center>"
 
 	for(var/mob/living/carbon/human/H in GLOB.living_mob_list_|GLOB.dead_mob_list_)
 		if(findtext(H.real_name,"(mannequin)"))
@@ -133,7 +133,7 @@ client
 			if(rank.name_short)
 				used_name = "[rank.name_short] [used_name]"
 		var/showckey = 0
-		if(H.ckey && H.client)			
+		if(H.ckey && H.client)
 			if(H.client.get_preference_value(/datum/client_preference/show_ckey_credits) == GLOB.PREF_SHOW)
 				showckey = 1
 		var/decl/cultural_info/actor_culture = SSculture.get_culture(H.get_cultural_value(TAG_CULTURE))
@@ -142,11 +142,11 @@ client
 		if(!showckey)
 			if(prob(90))
 				chunk += "[actor_culture.get_random_name(H.gender)]\t \t \t \t[uppertext(used_name)][job]"
-			else				
+			else
 				var/datum/gender/G = gender_datums[H.gender]
 				chunk += "[used_name]\t \t \t \t[uppertext(G.him)]SELF"
 		else
-			chunk += "[uppertext(actor_culture.get_random_name(H.gender))] a.k.a. '[uppertext(H.ckey)]'\t \t \t \t[uppertext(used_name)][job]"
+			chunk += "[uppertext(actor_culture.get_random_name(H.gender))] CONOSCIUTO ANCHE COME '[uppertext(H.ckey)]'\t \t \t \t[uppertext(used_name)][job]"
 		chunksize++
 		if(chunksize > 2)
 			cast += "<center>[jointext(chunk,"<br>")]</center>"
@@ -170,10 +170,10 @@ client
 		var/datum/species/S = all_species[spec]
 		corpses += "[monkies[spec]] [lowertext(monkies[spec] > 1 ? S.name_plural : S.name)]"
 	if(corpses.len)
-		titles += "<center>BASED ON REAL EVENTS<br>In memory of [english_list(corpses)].</center>"
+		titles += "<center>BASATO SU FATTI REALI<br>In memoria di: [english_list(corpses)].</center>"
 
-	var/list/staff = list("PRODUCTION STAFF:")
-	var/list/staffjobs = list("Coffe Fetcher", "Cameraman", "Angry Yeller", "Chair Operator", "Choreographer", "Historical Consultant", "Costume Designer", "Chief Editor", "Executive Assistant")
+	var/list/staff = list("STAFF DI PRODUZIONE:")
+	var/list/staffjobs = list("Davide Akaired Maiorana", "Davideh", "Akaired", "DAVIDE IL CONQUISTATORE", "VLADMIR PUTIN", "SUA ECCELLENZA SILVIO BERLUSCONI", "MATTEO SLAVINI", "MATTEO SHISH RENZIE", "UN IMMIKRATO KLANDESTINO")
 	var/list/goodboys = list()
 	for(var/client/C)
 		if(!C.holder)
@@ -186,24 +186,24 @@ client
 
 	titles += "<center>[jointext(staff,"<br>")]</center>"
 	if(goodboys.len)
-		titles += "<center>STAFF'S GOOD BOYS:<br>[english_list(goodboys)]</center><br>"
+		titles += "<center>I GOOD BOI DELLO STAFF:<br>[english_list(goodboys)]</center><br>"
 
-	var/disclaimer = "<br>Sponsored by [GLOB.using_map.company_name].<br>All rights reserved.<br>\
-					 This motion picture is protected under the copyright laws of the Sol Central Government<br> and other nations throughout the galaxy.<br>\
-					 Colony of First Publication: [pick("Mars", "Luna", "Earth", "Venus", "Phobos", "Ceres", "Tiamat", "Ceti Epsilon", "Eos", "Pluto", "Ouere",\
+	var/disclaimer = "<br>Sponsored by [GLOB.using_map.company_name].<br>Tutti i diritti riservati.<br>\
+					 Questa motion picture è protetta sotto le leggi del copyright del Governo Centrale del Sistema Solare<br> e da altre nazioni per tutta la galassia.<br>\
+					 Colonia di Prima Pubblicazione: [pick("Marte", "Luna", "Terra", "Venere", "Phobos", "Ceres", "Tiamat", "Ceti Epsilon", "Eos", "Plutone", "Ouere",\
 					 "Lordania", "Kingston", "Cinu", "Yuklid V", "Lorriman", "Tersten", "Gaia")].<br>"
-	disclaimer += pick("Use for parody prohibited. PROHIBITED.", 
-					   "All stunts were performed by underpaid interns. Do NOT try at home.",
-					   "[GLOB.using_map.company_name] does not endorse behaviour depicted. Attempt at your own risk.",
-					   "Any unauthorized exhibition, distribution, or copying of this film or any part thereof (including soundtrack)<br>\
-						may result in an ERT being called to storm your home and take it back by force.",
-						"The story, all names, characters, and incidents portrayed in this production are fictitious. No identification with actual<br>\
-						persons (living or deceased), places, buildings, and products is intended or should be inferred.<br>\
-						This film is based on a true story and all individuals depicted are based on real people, despite what we just said.",
-						"No person or entity associated	with this film received payment or anything of value, or entered into any agreement, in connection<br>\
-						with the depiction of tobacco products, despite the copious amounts	of smoking depicted within.<br>\
-						(This disclaimer sponsored by Carcinoma - Carcinogens are our Business!(TM)).",
-						"No animals were harmed in the making of this motion picture except for those listed previously as dead. Do not try this at home.")
+	disclaimer += pick("Uso parodistico proibito. PROIBITO.",
+					   "Tutti gli stunts sono stati performati da stagisti non pagati. NON provare a casa.",
+					   "[GLOB.using_map.company_name] Non promuove il comportamento rappresentato. Imita a tuo rischio.",
+					   "Qualsiasi esibizione, distribuzione o copia non autorizzata di questo film o di ciascuna sua parte (soundtrack inclusa)<br>\
+						potrebbe risultare in un TEAM ERT inviato al tuo domicilio per il recupero con la forza (anche letale) degli asset rubati.",
+						"La storia, tutti i nomi, personaggi, e incidenti rappresentati in questa produzione sono una finzione Nessuna identificazione con<br>\
+						persone reali (in vita o decedute), luoghi, edifici, e prodotti è intenzionale o dovrebbe essere considerata tale.<br>\
+						Questo film è basato su una storia vera e tutti gli individi rappresentati sono basati su persone reali, nonostante tutto ciò che abbiamo dichiarato sopra.",
+						"Nessuna persona o entità associata con questo film ha ricevuto un pagamento o qualsiasi oggetto di valore o ha stretto qualsiasi forma di accordo, in connessione<br>\
+						con la rappresentazione di prodotti di tabacco, nonostante il gran numero di scene di fumo rappresentate.<br>\
+						(Questo disclaimer offerto da Carcinoma - I Carcinogeni sono il nostro Business!(TM)).",
+						"Nessun animale e stato ferito nella realizzazione di questo film, tranne quelli elencati precedentemente come morti. Non provarlo a casa.")
 	titles += "<hr>"
 	titles += "<center><span style='font-size:6pt;'>[JOINTEXT(disclaimer)]</span></center>"
 

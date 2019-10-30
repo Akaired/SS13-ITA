@@ -1,56 +1,56 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki()
 	set name = "Wiki"
-	set desc = "Visit the wiki."
+	set desc = "Vista la wiki."
 	set hidden = 1
 	if( config.wikiurl )
-		if(alert("This will open the wiki in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("Questa decisione aprirà la wiki sul tuo browser. Confermi?",,"Si","No")=="No")
 			return
 		send_link(src, config.wikiurl)
 	else
-		to_chat(src, "<span class='warning'>The wiki URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='warning'>L'URL della wiki non è stato identificato nei config del server.</span>")
 	return
 
 /client/verb/github()
 	set name = "GitHub"
-	set desc = "Visit the GitHub repository."
+	set desc = "Visita la Repository GitHub."
 	set hidden = 1
 	if( config.githuburl )
-		if(alert("This will open GitHub in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("Questa decisione aprirà la Repository GitHub sul tuo browser. Confermi?",,"Si","No")=="No")
 			return
 		send_link(src, config.githuburl)
 	else
-		to_chat(src, "<span class='warning'>The github URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='warning'>L'URL github non è stato identificato nei config del server.</span>")
 	return
 
 /client/verb/bugreport()
-	set name = "Bug Report"
-	set desc = "Visit the GitHub repository to report an issue or bug."
+	set name = "Segnalazione Bug"
+	set desc = "Visita la Repository GitHub per segnalare un bug o errore."
 	set hidden = 1
 	if( config.issuereporturl )
-		if(alert("This will open GitHub in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("Questa decisione aprirà la Repository GitHub sul tuo browser. Confermi?",,"Si","No")=="No")
 			return
 		send_link(src, config.issuereporturl)
 	else
-		to_chat(src, "<span class='warning'>The issue report URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='warning'>L'URL github non è stato identificato nei config del server.</span>")
 	return
 
 /client/verb/forum()
 	set name = "Forum"
-	set desc = "Visit the forum."
+	set desc = "Visita il forum."
 	set hidden = 1
 	if( config.forumurl )
-		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("Questa decisione aprirà il Forum sul tuo browser. Confermi?",,"Si","No")=="No")
 			return
 		send_link(src, config.forumurl)
 	else
-		to_chat(src, "<span class='warning'>The forum URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='warning'>L'URL del forum non è stato identificato nei config del server.</span>")
 	return
 
 #define RULES_FILE "config/rules.html"
 /client/verb/rules()
-	set name = "Rules"
-	set desc = "Show Server Rules."
+	set name = "Regole"
+	set desc = "Mostra le regole del server."
 	set hidden = 1
 	show_browser(src, file(RULES_FILE), "window=rules;size=480x320")
 #undef RULES_FILE
@@ -58,7 +58,7 @@
 #define LORE_FILE "config/lore.html"
 /client/verb/lore_splash()
 	set name = "Lore"
-	set desc = "Links to the beginner Lore wiki."
+	set desc = "Ti porta alla Lore."
 	set hidden = 1
 	show_browser(src, file(LORE_FILE), "window=lore;size=480x320")
 #undef LORE_FILE

@@ -6,7 +6,7 @@
 		if(department_goals && current.get_preference_value(/datum/client_preference/show_department_goals) == GLOB.PREF_SHOW)
 			to_chat(current, SPAN_NOTICE(department_goals))
 		if(LAZYLEN(goals))
-			to_chat(current, SPAN_NOTICE("<br><br><b>You had the following personal goals this round:</b><br>[jointext(summarize_goals(TRUE), "<br>")]"))
+			to_chat(current, SPAN_NOTICE("<br><br><b>Avevi i seguenti Obbiettivi personali per questo round:</b><br>[jointext(summarize_goals(TRUE), "<br>")]"))
 
 /datum/mind/proc/summarize_goals(var/show_success = FALSE, var/allow_modification = FALSE, var/mob/caller)
 	. = list()
@@ -24,7 +24,7 @@
 	var/pref_val = current.get_preference_value(/datum/client_preference/give_personal_goals)
 	if(pref_val == GLOB.PREF_NEVER || (pref_val == GLOB.PREF_NON_ANTAG && player_is_antag(src)))
 		if(!is_spawning)
-			to_chat(src.current, "<span class='warning'>Your preferences do not allow you to add random goals.</span>")
+			to_chat(src.current, "<span class='warning'>Le tue preferenze non ti permettono di avere Goals.</span>")
 		return FALSE
 
 	var/list/available_goals = SSgoals.global_personal_goals ? SSgoals.global_personal_goals.Copy() : list()
