@@ -67,7 +67,7 @@
 	if(M == buckled_mob)
 		return 0
 	if(istype(M, /mob/living/carbon/slime))
-		to_chat(user, "<span class='warning'>\The [M] is too squishy to buckle in.</span>")
+		to_chat(user, "<span class='warning'>\E' troppo scivoloso [M] per assicurarsi.</span>")
 		return 0
 
 	add_fingerprint(user)
@@ -81,28 +81,28 @@
 	if(.)
 		if(M == user)
 			M.visible_message(\
-				"<span class='notice'>\The [M.name] buckles themselves to \the [src].</span>",\
-				"<span class='notice'>You buckle yourself to \the [src].</span>",\
-				"<span class='notice'>You hear metal clanking.</span>")
+				"<span class='notice'>\The [M.name] si allaccia a \the [src].</span>",\
+				"<span class='notice'>Ti allacci \the [src].</span>",\
+				"<span class='notice'>Senti un clangore metallico.</span>")
 		else
 			M.visible_message(\
-				"<span class='danger'>\The [M.name] is buckled to \the [src] by \the [user.name]!</span>",\
-				"<span class='danger'>You are buckled to \the [src] by \the [user.name]!</span>",\
-				"<span class='notice'>You hear metal clanking.</span>")
+				"<span class='danger'>\The [M.name] è attaccato a \the [src] da \the [user.name]!</span>",\
+				"<span class='danger'>Sei allacciato a \the [src] da \the [user.name]!</span>",\
+				"<span class='notice'>Senti un clangore metallico.</span>")
 
 /obj/proc/user_unbuckle_mob(mob/user)
 	var/mob/living/M = unbuckle_mob()
 	if(M)
 		if(M != user)
 			M.visible_message(\
-				"<span class='notice'>\The [M.name] was unbuckled by \the [user.name]!</span>",\
-				"<span class='notice'>You were unbuckled from \the [src] by \the [user.name].</span>",\
-				"<span class='notice'>You hear metal clanking.</span>")
+				"<span class='notice'>\The [M.name] è stato slacciato da \the [user.name]!</span>",\
+				"<span class='notice'>Sei stato slacciato da \the [src] da \the [user.name].</span>",\
+				"<span class='notice'>Senti un clangore metallico.</span>")
 		else
 			M.visible_message(\
-				"<span class='notice'>\The [M.name] unbuckled themselves!</span>",\
-				"<span class='notice'>You unbuckle yourself from \the [src].</span>",\
-				"<span class='notice'>You hear metal clanking.</span>")
+				"<span class='notice'>\The [M.name] si è slacciato la cintura!</span>",\
+				"<span class='notice'>Ti sei slacciato da \the [src].</span>",\
+				"<span class='notice'>Senti un clangore metallico.</span>")
 		add_fingerprint(user)
 	return M
 

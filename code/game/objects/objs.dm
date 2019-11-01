@@ -135,12 +135,12 @@
 /obj/proc/wrench_floor_bolts(mob/user, delay=20)
 	playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
 	if(anchored)
-		user.visible_message("\The [user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
+		user.visible_message("\The [user] inizia a svitare \the [src] dal pavimento.", "Inizi a svitare \the [src] dal pavimento.")
 	else
-		user.visible_message("\The [user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
+		user.visible_message("\The [user] inizia ad avvitare \the [src] al pavimento.", "Inizi a avvitare \the [src] al pavimento.")
 	if(do_after(user, delay, src))
 		if(!src) return
-		to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
+		to_chat(user, "<span class='notice'>Tu [anchored? "un" : ""]secured \the [src]!</span>")
 		anchored = !anchored
 	return 1
 
@@ -159,20 +159,20 @@
 	if(obj_flags & OBJ_FLAG_ROTATABLE)
 		rotate(user)
 	..()
-	
+
 /obj/examine(mob/user)
 	. = ..()
 	if(. && (obj_flags & OBJ_FLAG_ROTATABLE))
-		to_chat(user, "<span class='subtle'>Can be rotated with alt-click.</span>")
+		to_chat(user, "<span class='subtle'>Può essere ruotato con alt-click.</span>")
 
 /obj/proc/rotate(mob/user)
 	if(!CanPhysicallyInteract(user))
-		to_chat(user, SPAN_NOTICE("You can't interact with \the [src] right now!"))
+		to_chat(user, SPAN_NOTICE("Non puoi interagire con \the [src] al momento!"))
 		return
 
 	if(anchored)
-		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
-		return 
+		to_chat(user, SPAN_NOTICE("\The [src] è assicurato al pavimento!"))
+		return
 
 	set_dir(turn(dir, 90))
-	update_icon() 
+	update_icon()

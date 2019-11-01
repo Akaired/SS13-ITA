@@ -160,37 +160,37 @@
 	var/size
 	switch(src.w_class)
 		if(ITEM_SIZE_TINY)
-			size = "tiny"
+			size = "minuscolo"
 		if(ITEM_SIZE_SMALL)
-			size = "small"
+			size = "piccolo"
 		if(ITEM_SIZE_NORMAL)
-			size = "normal-sized"
+			size = "taglia normale"
 		if(ITEM_SIZE_LARGE)
-			size = "large"
+			size = "largo"
 		if(ITEM_SIZE_HUGE)
-			size = "bulky"
+			size = "ingombrante"
 		if(ITEM_SIZE_HUGE + 1 to INFINITY)
-			size = "huge"
+			size = "gigante"
 	var/desc_comp = "" //For "description composite"
-	desc_comp += "It is a [size] item."
+	desc_comp += "E' un oggetto [size]."
 
 	if(hasHUD(user, HUD_SCIENCE)) //Mob has a research scanner active.
 		desc_comp += "<BR>*--------* <BR>"
 
 		if(origin_tech)
-			desc_comp += "<span class='notice'>Testing potentials:</span><BR>"
+			desc_comp += "<span class='notice'>Potenzialità di ricerca:</span><BR>"
 			//var/list/techlvls = params2list(origin_tech)
 			for(var/T in origin_tech)
-				desc_comp += "Tech: Level [origin_tech[T]] [CallTechName(T)] <BR>"
+				desc_comp += "Tecnologia Livello: [origin_tech[T]] [CallTechName(T)] <BR>"
 		else
-			desc_comp += "No tech origins detected.<BR>"
+			desc_comp += "Nessuna origine tecnologica individuata.<BR>"
 
 		if(LAZYLEN(matter))
-			desc_comp += "<span class='notice'>Extractable materials:</span><BR>"
+			desc_comp += "<span class='notice'>Materiali estraibili:</span><BR>"
 			for(var/mat in matter)
 				desc_comp += "[SSmaterials.get_material_by_name(mat)]<BR>"
 		else
-			desc_comp += "<span class='danger'>No extractable materials detected.</span><BR>"
+			desc_comp += "<span class='danger'>Nessun materiale estraibile rilevato.</span><BR>"
 		desc_comp += "*--------*"
 
 	return ..(user, distance, "", desc_comp)
@@ -205,10 +205,10 @@
 		if (user.hand)
 			temp = H.organs_by_name[BP_L_HAND]
 		if(temp && !temp.is_usable())
-			to_chat(user, "<span class='notice'>You try to move your [temp.name], but cannot!</span>")
+			to_chat(user, "<span class='notice'>Provi a muovere il tuo [temp.name], ma non riesci!</span>")
 			return
 		if(!temp)
-			to_chat(user, "<span class='notice'>You try to use your hand, but realize it is no longer attached!</span>")
+			to_chat(user, "<span class='notice'>Provi a muovere la tua mano, ma ti accorgi che non è più attaccata al suo posto!</span>")
 			return
 
 	var/old_loc = loc
@@ -378,12 +378,12 @@ var/list/global/slot_flags_enumeration = list(
 				return 1
 			else if(!H.w_uniform && (slot_w_uniform in mob_equip))
 				if(!disable_warning)
-					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [name].</span>")
+					to_chat(H, "<span class='warning'>Ti serve una divisa prima di poterci attaccare questo [name].</span>")
 				return 0
 		if(slot_l_store, slot_r_store)
 			if(!H.w_uniform && (slot_w_uniform in mob_equip))
 				if(!disable_warning)
-					to_chat(H, "<span class='warning'>You need a jumpsuit before you can attach this [name].</span>")
+					to_chat(H, "<span class='warning'>Ti serve una divisa prima di poterci attaccare questo [name].</span>")
 				return 0
 			if(slot_flags & SLOT_DENYPOCKET)
 				return 0
@@ -394,7 +394,7 @@ var/list/global/slot_flags_enumeration = list(
 		if(slot_s_store)
 			if(!H.wear_suit && (slot_wear_suit in mob_equip))
 				if(!disable_warning)
-					to_chat(H, "<span class='warning'>You need a suit before you can attach this [name].</span>")
+					to_chat(H, "<span class='warning'>Ti serve una divisa prima di poterci attaccare questo [name].</span>")
 				return 0
 			if(!H.wear_suit.allowed)
 				if(!disable_warning)
@@ -457,22 +457,22 @@ var/list/global/slot_flags_enumeration = list(
 	if(!CanPhysicallyInteract(usr))
 		return
 	if((!istype(usr, /mob/living/carbon)) || (istype(usr, /mob/living/carbon/brain)))//Is humanoid, and is not a brain
-		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
+		to_chat(usr, "<span class='warning'>Non puoi raccogliere le cose per terra!</span>")
 		return
 	if( usr.stat || usr.restrained() )//Is not asleep/dead and is not restrained
-		to_chat(usr, "<span class='warning'>You can't pick things up!</span>")
+		to_chat(usr, "<span class='warning'>Non puoi raccogliere le cose!</span>")
 		return
 	if(src.anchored) //Object isn't anchored
-		to_chat(usr, "<span class='warning'>You can't pick that up!</span>")
+		to_chat(usr, "<span class='warning'>Quello non puoi raccoglierlo!</span>")
 		return
 	if(!usr.hand && usr.r_hand) //Right hand is not full
-		to_chat(usr, "<span class='warning'>Your right hand is full.</span>")
+		to_chat(usr, "<span class='warning'>La tua mano destra è occupata.</span>")
 		return
 	if(usr.hand && usr.l_hand) //Left hand is not full
-		to_chat(usr, "<span class='warning'>Your left hand is full.</span>")
+		to_chat(usr, "<span class='warning'>La tua mano sinistra è occupata.</span>")
 		return
 	if(!istype(src.loc, /turf)) //Object is on a turf
-		to_chat(usr, "<span class='warning'>You can't pick that up!</span>")
+		to_chat(usr, "<span class='warning'>Quello non puoi raccoglierlo!</span>")
 		return
 	//All checks are done, time to pick it up!
 	usr.UnarmedAttack(src)
@@ -496,7 +496,7 @@ var/list/global/slot_flags_enumeration = list(
 		parry_chance = max(0, parry_chance - 10 * attacker.get_skill_difference(SKILL_COMBAT, user))
 	if(parry_chance)
 		if(default_parry_check(user, attacker, damage_source) && prob(parry_chance))
-			user.visible_message("<span class='danger'>\The [user] parries [attack_text] with \the [src]!</span>")
+			user.visible_message("<span class='danger'>\The [user] schiva [attack_text] con \the [src]!</span>")
 			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
 			on_parry(damage_source)
 			return 1
@@ -517,7 +517,7 @@ var/list/global/slot_flags_enumeration = list(
 	if(!istype(attacker))
 		return 0
 	attacker.apply_damage(force, damtype, attacker.hand ? BP_L_HAND : BP_R_HAND, used_weapon = src)
-	attacker.visible_message("<span class='danger'>[attacker] hurts \his hand on [src]!</span>")
+	attacker.visible_message("<span class='danger'>[attacker] si fa male nella \his mano su [src]!</span>")
 	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 	playsound(target, hitsound, 50, 1, -1)
 	return 1
@@ -535,14 +535,14 @@ var/list/global/slot_flags_enumeration = list(
 		for(var/obj/item/protection in list(H.head, H.wear_mask, H.glasses))
 			if(protection && (protection.body_parts_covered & EYES))
 				// you can't stab someone in the eyes wearing a mask!
-				to_chat(user, "<span class='warning'>You're going to need to remove the eye covering first.</span>")
+				to_chat(user, "<span class='warning'>Devi rimuovere la copertura agli occhi prima!</span>")
 				return
 
 	if(!M.has_eyes())
-		to_chat(user, "<span class='warning'>You cannot locate any eyes on [M]!</span>")
+		to_chat(user, "<span class='warning'>Non riesci a trovare nessun occhio su [M]!</span>")
 		return
 
-	admin_attack_log(user, M, "Attacked using \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
+	admin_attack_log(user, M, "Ha attaccato usando \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(M)
@@ -555,30 +555,30 @@ var/list/global/slot_flags_enumeration = list(
 
 		if(H != user)
 			for(var/mob/O in (viewers(M) - user - M))
-				O.show_message("<span class='danger'>[M] has been stabbed in the eye with [src] by [user].</span>", 1)
-			to_chat(M, "<span class='danger'>[user] stabs you in the eye with [src]!</span>")
-			to_chat(user, "<span class='danger'>You stab [M] in the eye with [src]!</span>")
+				O.show_message("<span class='danger'>[M] è stato pugnalato nell'occhio con [src] da [user].</span>", 1)
+			to_chat(M, "<span class='danger'>[user] ti pugnala l'occhio con [src]!</span>")
+			to_chat(user, "<span class='danger'>Pugnali [M] sull'occhio con [src]!</span>")
 		else
 			user.visible_message( \
-				"<span class='danger'>[user] has stabbed themself with [src]!</span>", \
-				"<span class='danger'>You stab yourself in the eyes with [src]!</span>" \
+				"<span class='danger'>[user] si è pugnalato con [src]!</span>", \
+				"<span class='danger'>Ti pugnagli negli occhi con [src]!</span>" \
 			)
 
 		eyes.damage += rand(3,4)
 		if(eyes.damage >= eyes.min_bruised_damage)
 			if(M.stat != 2)
 				if(!BP_IS_ROBOTIC(eyes)) //robot eyes bleeding might be a bit silly
-					to_chat(M, "<span class='danger'>Your eyes start to bleed profusely!</span>")
+					to_chat(M, "<span class='danger'>I tuoi occhi iniziano a sanguinare a profusione!</span>")
 			if(prob(50))
 				if(M.stat != 2)
-					to_chat(M, "<span class='warning'>You drop what you're holding and clutch at your eyes!</span>")
+					to_chat(M, "<span class='warning'>Getti ciò che tenevi in mano e ti copri gli occhi!</span>")
 					M.unequip_item()
 				M.eye_blurry += 10
 				M.Paralyse(1)
 				M.Weaken(4)
 			if (eyes.damage >= eyes.min_broken_damage)
 				if(M.stat != 2)
-					to_chat(M, "<span class='warning'>You go blind!</span>")
+					to_chat(M, "<span class='warning'>Diventi cieco!!</span>")
 
 		var/obj/item/organ/external/affecting = H.get_organ(eyes.parent_organ)
 		affecting.take_external_damage(7)
@@ -643,10 +643,10 @@ GLOBAL_LIST_EMPTY(blood_overlay_cache)
 
 /obj/item/proc/showoff(mob/user)
 	for (var/mob/M in view(user))
-		M.show_message("[user] holds up [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Take a closer look.</a>",1)
+		M.show_message("[user] sta tenendo [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Dai uno sguardo più da vicino.</a>",1)
 
 /mob/living/carbon/verb/showoff()
-	set name = "Show Held Item"
+	set name = "Mostra ciò che tieni in mano"
 	set category = "Object"
 
 	var/obj/item/I = get_active_hand()
@@ -698,7 +698,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 			user.client.pixel_x = -viewoffset
 			user.client.pixel_y = 0
 
-	user.visible_message("\The [user] peers through [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
+	user.visible_message("\The [user] guarda attraverso [zoomdevicename ? "the [zoomdevicename] of [src]" : "[src]"].")
 
 	GLOB.destroyed_event.register(src, src, /obj/item/proc/unzoom)
 	GLOB.moved_event.register(src, src, /obj/item/proc/unzoom)
@@ -818,13 +818,13 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/get_pressure_weakness(pressure)
 	. = 1
 	if(pressure > ONE_ATMOSPHERE)
-		if(max_pressure_protection != null) 
+		if(max_pressure_protection != null)
 			if(max_pressure_protection < pressure)
 				return min(1, round((pressure - max_pressure_protection) / max_pressure_protection, 0.01))
 			else
 				return 0
 	if(pressure < ONE_ATMOSPHERE)
-		if(min_pressure_protection != null) 
+		if(min_pressure_protection != null)
 			if(min_pressure_protection > pressure)
 				return min(1, round((min_pressure_protection - pressure) / min_pressure_protection, 0.01))
 			else

@@ -35,7 +35,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 /atom/movable/attackby(obj/item/W, mob/user)
 	if(!(W.item_flags & ITEM_FLAG_NO_BLUDGEON))
-		visible_message("<span class='danger'>[src] has been hit by [user] with [W].</span>")
+		visible_message("<span class='danger'>[src] è stato colpito da [user] con [W].</span>")
 
 /mob/living/attackby(obj/item/I, mob/user)
 	if(!ismob(user))
@@ -69,7 +69,7 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	/////////////////////////
 
 	if(!no_attack_log)
-		admin_attack_log(user, M, "Attacked using \a [src] (DAMTYE: [uppertext(damtype)])", "Was attacked with \a [src] (DAMTYE: [uppertext(damtype)])", "used \a [src] (DAMTYE: [uppertext(damtype)]) to attack")
+		admin_attack_log(user, M, "Ha attaccato usando \a [src] (DAMTYE: [uppertext(damtype)])", "E' stato attaccato usando \a [src] (DAMTYE: [uppertext(damtype)])", "ha usato \a [src] (DAMTYE: [uppertext(damtype)]) per attaccare!")
 	/////////////////////////
 	user.setClickCooldown(attack_cooldown + w_class)
 	user.do_attack_animation(M)
