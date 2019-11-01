@@ -10,18 +10,18 @@
 	speech = list("hail_generic"    = "Hello! Welcome to ORIGIN, may I take your order?",
 				"hail_deny"         = "Beeeep... I'm sorry, your connection has been severed.",
 
-				"trade_complete"    = "Thank you for choosing ORIGIN!",
-				"trade_no_goods"    = "I'm sorry but we only take cash.",
-				"trade_blacklisted" = "Sir that's... highly illegal.",
-				"trade_not_enough"  = "Uhh... that's not enough money for pizza.",
+				"trade_complete"    = "Grazie per aver scelto ORIGIN!",
+				"trade_no_goods"    = "Sono spiacente, ma noi accettiamo solo contanti",
+				"trade_blacklisted" = "Signore questo è...altamente illegale",
+				"trade_not_enough"  = "Ehm...quelli non bastano per pagare una pizza",
 				"how_much"          = "That pizza will cost you VALUE thalers.",
 
 				"compliment_deny"   = "That's a bit forward, don't you think?",
-				"compliment_accept" = "Thanks, sir! You're very nice!",
-				"insult_good"       = "Please stop that, sir.",
-				"insult_bad"        = "Sir, just because I'm contractually obligated to keep you on the line for a minute doesn't mean I have to take this.",
+				"compliment_accept" = "Grazie signore! Lei è veramente gentile.",
+				"insult_good"       = "Per favore, la smetta.",
+				"insult_bad"        = "Signore, solo perché sono obbligato da contratto a tenerla in linea per qualche minuto, non significa che devo tenerlo.",
 
-				"bribe_refusal"     = "Uh... thanks for the cash, sir. As long as you're in the area, we'll be here...",
+				"bribe_refusal"     = "Uh, grazie per i soldi, signore. Finche lei rimarrà in zona, noi saremo qua.",
 				)
 
 /datum/trader/pizzaria/trade(var/list/offers, var/num, var/turf/location)
@@ -31,10 +31,10 @@
 		var/obj/item/pizzabox/box = new(location)
 		M.forceMove(box)
 		box.pizza = M
-		box.boxtag = "A special order from [origin]"
+		box.boxtag = "Ordine speciale da [origin]"
 
 /datum/trader/ship/chinese
-	name = "Chinese Restaurant"
+	name = "Ristorante Cinese"
 	name_language = TRADER_DEFAULT_NAME
 	origin = "Captain Panda Bistro"
 	possible_origins = list("888 Shanghai Kitchen", "Mr. Lee's Greater Hong Kong", "The House of the Venerable and Inscrutable Colonel", "Lucky Dragon")
@@ -50,17 +50,17 @@
 							/obj/item/weapon/reagent_containers/food/drinks/dry_ramen                  = TRADER_THIS_TYPE
 							)
 
-	var/list/fortunes = list("Today it's up to you to create the peacefulness you long for.",
+	var/list/fortunes = list("Oggi tocca a te creare la tranquillità che desideri.",
 							"If you refuse to accept anything but the best, you very often get it.",
-							"A smile is your passport into the hearts of others.",
-							"Hard work pays off in the future, laziness pays off now.",
-							"Change can hurt, but it leads a path to something better.",
+							"Il sorriso è il pasaporto per entrare nei cuori altrui.",
+							"Il duro lavoro ripaga in futuro, la pigrizia paga subito.",
+							"Il cambiamento può far male, ma spesso conduce al miglioramento.",
 							"Hidden in a valley beside an open stream- This will be the type of place where you will find your dream.",
 							"Never give up. You're not a failure if you don't give up.",
-							"Love can last a lifetime, if you want it to.",
+							"L'amore può durare per sempre, se vuoi.",
 							"The love of your life is stepping into your planet this summer.",
 							"Your ability for accomplishment will follow with success.",
-							"Please help me, I'm trapped in a fortune cookie factory!")
+							"Per favore, aiutami. Sono intrappolato in una fabbrica di biscotti della fortuna!")
 
 	speech = list("hail_generic"     = "There are two things constant in life, death and Chinese food. How may I help you?",
 				"hail_deny"          = "We do not take orders from rude customers.",
@@ -110,40 +110,40 @@
 							/obj/item/weapon/reagent_containers/food/snacks/variable                   = TRADER_BLACKLIST_ALL
 							)
 
-	speech = list("hail_generic"     = "Hello, welcome to ORIGIN, grocery store of the future!",
-				"hail_deny"          = "I'm sorry, we've blacklisted your communications due to rude behavior.",
+	speech = list("hail_generic"     = "Salve e benvenuti a ORIGIN, il negozio del futuro!",
+				"hail_deny"          = "Siamo spiacenti, ma abbiamo inserito le sue comunicazioni nella blacklist a causa dei suoi comportamenti scorretti e scortesi.",
 
-				"trade_complete"     = "Thank you for shopping at ORIGIN!",
-				"trade_blacklist"    = "I... wow, that's... no, sir. No.",
-				"trade_no_goods"     = "ORIGIN only accepts cash, sir.",
-				"trade_not_enough"   = "That is not enough money, sir.",
-				"how_much"           = "Sir, that'll cost you VALUE thalers. Will that be all?",
+				"trade_complete"     = "Grazie per essere venuto nel nostro negozio ORIGIN!",
+				"trade_blacklist"    = "Io...wow. Questo è...signore, no.",
+				"trade_no_goods"     = "ORIGIN accetta solo contanti, signore.",
+				"trade_not_enough"   = "Non sono sufficienti, signore.",
+				"how_much"           = "Signore, questo vi costerà dei talleri. Va bene lo stesso?",
 
-				"compliment_deny"    = "Sir, this is a professional environment. Please don't make me get my manager.",
-				"compliment_accept"  = "Thank you, sir!",
-				"insult_good"        = "Sir, please do not make a scene.",
-				"insult_bad"         = "Sir, I WILL get my manager if you don't calm down.",
+				"compliment_deny"    = "Signore, questo è un ambiente professionale. Non mi obblighi a chiamare il responsabile.",
+				"compliment_accept"  = "Grazie!",
+				"insult_good"        = "Signore, per favore non faccia scenate.",
+				"insult_bad"         = "Signore, dovrò chiamare il responsabile se non si calma.",
 
-				"bribe_refusal"      = "Of course sir! ORIGIN is always here for you!",
+				"bribe_refusal"      = "Certo! ORIGIN sarà sempre disponibile per lei.",
 				)
 
 /datum/trader/bakery
-	name = "Pastry Chef"
+	name = "Chef Pasticcere"
 	name_language = TRADER_DEFAULT_NAME
-	origin = "Bakery"
+	origin = "Pasticceria"
 	possible_origins = list("Cakes By Design", "Corner Bakery Local", "My Favorite Cake & Pastry Cafe", "Mama Joes Bakery", "Sprinkles and Fun", "Cakestrosity")
 
 	speech = list("hail_generic"     = "Hello, welcome to ORIGIN! We serve baked goods, including pies, cakes, and anything sweet!",
-				"hail_deny"          = "Our food is a privilege, not a right. Goodbye.",
+				"hail_deny"          = "Il nostro cibo è un privilegio, non un diritto. Arrivederci.",
 
-				"trade_complete"     = "Thank you for your purchase! Come again if you're hungry for more!",
-				"trade_blacklist"    = "We only accept money. Not... that.",
-				"trade_no_goods"     = "Cash for cakes! That's our business!",
-				"trade_not_enough"   = "Our dishes are much more expensive than that, sir.",
+				"trade_complete"     = "Grazie per aver acquistato da noi! Torni pure se avrà fame di nuovo.",
+				"trade_blacklist"    = "oi accettiamo solo soldi. Non...quello...",
+				"trade_no_goods"     = "Soldi per torte! E' questo il nostro affare!",
+				"trade_not_enough"   = "I nosri piatti sono molto più cari rispetto a quelli, signore.",
 				"how_much"           = "That lovely dish will cost you VALUE thalers.",
 
 				"compliment_deny"    = "Oh wow, how nice of you...",
-				"compliment_accept"  = "You're almost as sweet as my pies!",
+				"compliment_accept"  = "Sei dolce quanto le mie torte!",
 				"insult_good"        = "My pies are NOT knockoffs!",
 				"insult_bad"         = "Well, aren't you a sour apple?",
 
