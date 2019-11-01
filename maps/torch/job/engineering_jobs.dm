@@ -1,10 +1,10 @@
 /datum/job/senior_engineer
-	title = "Senior Engineer"
+	title = "Ingegnere Anziano"
 	department = "Engineering"
 	department_flag = ENG
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Chief Engineer"
+	supervisors = "il Capo Ingegnere"
 	selection_color = "#5b4d20"
 	economic_power = 6
 	minimal_player_age = 3
@@ -46,23 +46,23 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/senior_engineer/get_description_blurb()
-	return "You are the Senior Engineer. You are a veteran SNCO. You are subordinate to the Chief Engineer though you may have many years more experience than them and your subordinates are the rest of engineering. You should be an expert in practically every engineering area and familiar and possess leadership skills. Coordinate the team and ensure the smooth running of the department along with the Chief Engineer."
+	return "Sei l'ingegnere senior. Sei un veterano SNCO. Sei subordinato all'ingegnere capo, anche se potresti avere molti anni di esperienza in piu rispetto a loro e i tuoi subordinati sono il resto dell'ingegneria. Dovresti essere un esperto praticamente in ogni area ingegneristica e familiare e possedere capacita di leadership. Coordinare il team e garantire il buon funzionamento del dipartimento insieme all'ingegnere capo."
 
 /datum/job/engineer
-	title = "Engineer"
+	title = "Ingegnere"
 	total_positions = 6
 	spawn_positions = 6
-	supervisors = "the Chief Engineer"
+	supervisors = "il Capo Ingegnere"
 	economic_power = 5
 	minimal_player_age = 0
 	ideal_character_age = 30
 	alt_titles = list(
-		"Maintenance Technician",
-		"Engine Technician",
-		"Damage Control Technician",
-		"EVA Technician",
-		"Electrician",
-		"Atmospheric Technician",
+		"Tecnico di Manutenzione",
+		"Tecnico del Reattore",
+		"Tecnico Controllo Danni",
+		"Tecnico Extra-veicolare",
+		"Elettricista",
+		"Tecnico Atmosferico",
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/engineer
 	allowed_branches = list(
@@ -106,15 +106,17 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/engineer/get_description_blurb()
-	return "You are an Engineer. You operate under one of many titles and may be highly specialised in a specific area of engineering. You probably have at least a general familiarity with most other areas though this is not expected. You are subordinate to the Senior Engineer and the Chief Engineer and are expected to follow them."
+	return "Sei un ingegnere. Operi con uno dei tanti titoli e potresti essere altamente specializzato in una specifica area di ingegneria. Probabilmente hai almeno una familiarita generale con la maggior parte delle altre aree, anche se questo non e previsto. Sei subordinato all'ingegnere senior e all'ingegnere capo e devi seguirli
+
+."
 
 /datum/job/engineer_trainee
-	title = "Engineer Trainee"
+	title = "Apprendista Ingegnere"
 	department = "Engineering"
 	department_flag = ENG
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Engineer and Engineering Personnel"
+	supervisors = "il Capo Ingegnere e tutto il personale del dipartimento ingegneria"
 	selection_color = "#5b4d20"
 	ideal_character_age = 20
 
@@ -157,21 +159,21 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/engineer_trainee/get_description_blurb()
-	return "You are an Engineer Trainee. You are learning how to operate the various onboard engineering systems from senior engineering staff. You are subordinate to all of the other engineers aboard."
+	return "Sei un ingegnere tirocinante. Stai imparando come far funzionare i vari sistemi di ingegneria di bordo da personale tecnico senior. Sei subordinato a tutti gli altri ingegneri a bordo."
 
 /datum/job/roboticist
-	title = "Roboticist"
+	title = "Roboticista"
 	department = "Engineering"
 	department_flag = ENG
 
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 0
-	supervisors = "the Chief Engineer and the Corporate Liaison."
+	supervisors = "il Capo Ingegnere e il Rappresentante Sindacalista."
 	selection_color = "#5b4d20"
 	economic_power = 6
 	alt_titles = list(
-		"Mechsuit Technician")
+		"Tecnico Meccatronico")
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/engineering/roboticist
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/contractor)
@@ -193,4 +195,4 @@
 	minimal_access = list()
 
 /datum/job/roboticist/get_description_blurb()
-	return "You are the Roboticist. You are responsible for repairing, upgrading and handling ship synthetics (like robots). You are also responsible for the production of exosuits(mechs) and bots for various departments. You answer to the Corporate Liaison and the Chief Engineer."
+	return "Sei il robotico. Sei responsabile della riparazione, dell'aggiornamento e della gestione dei sintetici delle navi (come i robot). Sei anche responsabile della produzione di exosuits (mech) e robot per vari reparti. Rispondete al collegamento aziendale e all'ingegnere capo."

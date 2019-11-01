@@ -5,7 +5,7 @@ Synthetic
 /datum/job/cyborg
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "your laws"
+	supervisors = "le tue leggi"
 	minimal_player_age = 3
 	allowed_ranks = list(
 		/datum/mil_rank/civ/synthetic
@@ -22,7 +22,7 @@ Civilian
 *******/
 
 /datum/job/assistant
-	title = "Passenger"
+	title = "Passeggero"
 	total_positions = 12
 	spawn_positions = 12
 	supervisors = "the Executive Officer"
