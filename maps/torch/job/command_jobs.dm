@@ -345,7 +345,7 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/sea/get_description_blurb()
-	return "Sei il Consigliere Militare Anziano. Sei la persona più alta arruolata sulla nave. Sei direttamente subordinato all'UC. Lo consigli su questioni militari e offri esperienza e consulenza agli ufficiali. Sei responsabile di garantire disciplina e buona condotta tra gli arruolati, nonché di informare i funzionari di eventuali problemi e di "consigliarli" sugli errori che commettono. Gestisci inoltre vari compiti per conto dell'UC e dell'UE. Sei una persona arruolata con esperienza, molto probabilmente uguale solo per esperienza a UC ed UE. Conosci i regolamenti meglio di chiunque altro."
+	return "Sei il Consigliere Militare Anziano. Sei la persona più alta arruolata sulla nave. Sei direttamente subordinato all'UC. Lo consigli su questioni militari e offri esperienza e consulenza agli ufficiali. Sei responsabile di garantire disciplina e buona condotta tra gli arruolati, nonché di informare i funzionari di eventuali problemi e di consigliarli sugli errori che commettono. Gestisci inoltre vari compiti per conto dell'UC e dell'UE. Sei una persona arruolata con esperienza, molto probabilmente uguale solo per esperienza a UC ed UE. Conosci i regolamenti meglio di chiunque altro."
 
 /datum/job/bridgeofficer
 	title = "Guardiamarina di Ponte"

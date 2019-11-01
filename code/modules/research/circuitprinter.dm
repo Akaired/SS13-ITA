@@ -5,8 +5,8 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 */
 
 /obj/machinery/r_n_d/circuit_imprinter
-	name = "circuit imprinter"
-	desc = "Accessed by a connected core fabricator console, it produces circuits from various materials and sulphuric acid."
+	name = "stampante 3D per circuiti"
+	desc = "Si usa da una console core fabricator, produce circuiti da vari metalli e dall'acido sulfurico."
 	icon_state = "circuit_imprinter"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	base_type = /obj/machinery/r_n_d/circuit_imprinter
@@ -49,7 +49,7 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 		update_icon()
 	else
 		if(busy)
-			visible_message("<span class='notice'>\icon [src] flashes: insufficient materials: [getLackingMaterials(D)].</span>")
+			visible_message("<span class='notice'>\icon [src] lampeggia: MATERIALI INSUFFICIENTI: [getLackingMaterials(D)].</span>")
 			busy = 0
 			update_icon()
 
@@ -90,33 +90,33 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 
 /obj/machinery/r_n_d/circuit_imprinter/cannot_transition_to(state_path)
 	if(busy)
-		return SPAN_NOTICE("\The [src] is busy. Please wait for completion of previous operation.")
+		return SPAN_NOTICE("\The [src] è occupato. Attendi il completamento delle operazioni precedenti.")
 	return ..()
 
 /obj/machinery/r_n_d/circuit_imprinter/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(busy)
-		to_chat(user, "<span class='notice'>\The [src] is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, "<span class='notice'>\The [src] è occupato. Attendi il completamento delle operazioni precedenti.</span>")
 		return 1
 	if(component_attackby(O, user))
 		return TRUE
 	if(panel_open)
-		to_chat(user, "<span class='notice'>You can't load \the [src] while it's opened.</span>")
+		to_chat(user, "<span class='notice'>Non puoi caricare \the [src] mentre è aperto.</span>")
 		return 1
 	if(!linked_console)
-		to_chat(user, "\The [src] must be linked to an R&D console first.")
+		to_chat(user, "\The [src] deve essere collegato ad una console R&D prima.")
 		return 1
 	if(O.is_open_container())
 		return 0
 	if(is_robot_module(O))
 		return 0
 	if(!istype(O, /obj/item/stack/material))
-		to_chat(user, "<span class='notice'>You cannot insert this item into \the [src]!</span>")
+		to_chat(user, "<span class='notice'>Non puoi inserire questo oggetto dentro \the [src]!</span>")
 		return 0
 	if(stat & (BROKEN | NOPOWER))
 		return 1
 
 	if(TotalMaterials() + SHEET_MATERIAL_AMOUNT > max_material_storage)
-		to_chat(user, "<span class='notice'>\The [src]'s material bin is full. Please remove material before adding more.</span>")
+		to_chat(user, "<span class='notice'> Il contenitore dei materiali del \the [src] è pieno. Perfavore rimuovine alcuni e riprova.</span>")
 		return 1
 
 	var/obj/item/stack/material/stack = O
@@ -129,7 +129,7 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 	if(t)
 		if(do_after(usr, 16, src))
 			if(stack.use(amount))
-				to_chat(user, "<span class='notice'>You add [amount] sheet\s to \the [src].</span>")
+				to_chat(user, "<span class='notice'>Aggiungi [amount] pannelli\s al \the [src].</span>")
 				materials[t] += amount * SHEET_MATERIAL_AMOUNT
 	busy = 0
 	updateUsrDialog()
