@@ -5,12 +5,12 @@ var/church_name = null
 
 	var/name = ""
 
-	name += pick("Holy", "United", "Primo", "Secondo", "Ultimo")
+	name += pick("Santo", "Unità", "Primo", "Secondo", "Ultimo")
 
 	if (prob(20))
 		name += " Spazio"
 
-	name += " " + pick("Church", "Cathedral", "Body", "Worshippers", "Movement", "Witnesses")
+	name += " " + pick("Chiesa", "Cattedrale", "Corpo", "Credenti", "Movimento", "Testimoni")
 	name += " of [religion_name()]"
 
 	return name
@@ -38,8 +38,8 @@ var/religion_name = null
 
 	var/name = ""
 
-	name += pick("bee", "science", "edu", "captain", "assistant", "monkey", "alien", "space", "unit", "sprocket", "gadget", "bomb", "revolution", "beyond", "station", "goon", "robot", "ivor", "hobnob")
-	name += pick("ism", "ia", "ology", "istism", "ites", "ick", "ian", "ity")
+	name += pick("ape", "scienza", "educazione", "capitano", "assistente", "scimmia", "alieno", "spazio", "unità", "rocchetto", "gadget", "bomba", "rivoluzione", "oltre", "stazione", "radiceor", "hobnob")
+	name += pick("ism", "ia", "olog", "istism", "ites", "ick", "ian", "ity")
 
 	return capitalize(name)
 
@@ -53,7 +53,7 @@ var/religion_name = null
 	return "[capitalize(pick(GLOB.last_names))]-[pick(GLOB.greek_letters)]"
 
 /proc/generate_planet_type()
-	return pick("terrestial planet", "ice planet", "dwarf planet", "desert planet", "ocean planet", "lava planet", "gas giant", "forest planet")
+	return pick("pianeta terrrstre", "pianeta ghiacciato", "pianeta deserto", "pianeta oceanico", "pianeta di lava", "gigante gassoso", "pianeta di foreste")
 
 /proc/station_name()
 	if(!GLOB.using_map)
@@ -78,8 +78,8 @@ var/religion_name = null
 				GLOB.using_map.station_name += name + " "
 
 		//For special days like christmas, easter, new-years etc ~Carn
-		if("Friday the 13th")
-			name = pick("Mike","Friday","Evil","Myers","Murder","Deathly","Stabby")
+		if("Venerdì 13")
+			name = pick("Mike","Venerdì", "Malvagio", "Myers", "Assassino", "Mortale", "Pugnalato")
 			GLOB.using_map.station_name += name + " "
 			random = 13
 		else
@@ -105,7 +105,7 @@ var/religion_name = null
 		if(5)
 			GLOB.using_map.station_name += pick(GLOB.numbers_as_words)
 		if(13)
-			GLOB.using_map.station_name += pick("13","XIII","Thirteen")
+			GLOB.using_map.station_name += pick("13","XIII","Tredicesimo")
 
 
 	if (config && config.server_name)
@@ -133,7 +133,7 @@ var/syndicate_name = null
 	var/name = ""
 
 	// Prefix
-	name += pick("Clandestine", "Prima", "Blue", "Zero-G", "Max", "Blasto", "Waffle", "North", "Omni", "Newton", "Cyber", "Bonk", "Gene", "Gib")
+	name += pick("Clandestino", "Prima", "Blue", "Zero-G", "Massimo", "Blasto", "Waffle", "Nord", "Ommi", "Cyber", "Bonk", "Gene", "Gib")
 
 	// Suffix
 	if (prob(80))
@@ -141,10 +141,10 @@ var/syndicate_name = null
 
 		// Full
 		if (prob(60))
-			name += pick("Syndicate", "Consortium", "Collective", "Corporation", "Group", "Holdings", "Biotech", "Industries", "Systems", "Products", "Chemicals", "Enterprises", "Family", "Creations", "International", "Intergalactic", "Interplanetary", "Foundation", "Positronics", "Hive")
+			name += pick("Sindacato", "Consorzio", "Collettivo", "Corporazione", "Gruppo", "Detenzione", "Biotecnologie", "Industrie", "Sistemi", "Prodotti", "Chimici", "Aziende", "Famiglia", "Creazioni", "Internazionale", "Intergalattico", "Interplanetario", "Fondazione", "Positronico", "Alveare")
 		// Broken
 		else
-			name += pick("Syndi", "Corp", "Bio", "System", "Prod", "Chem", "Inter", "Hive")
+			name += pick("Sind", "Corp", "Bio", "Sist", "Prod", "Chimico", "Inter", "Gruppo")
 			name += pick("", "-")
 			name += pick("Tech", "Sun", "Co", "Tek", "X", "Inc", "Code")
 	// Small
@@ -185,8 +185,8 @@ var/syndicate_code_response//Code response for traitors.
 	)
 
 	var/safety[] = list(1,2,3)//Tells the proc which options to remove later on.
-	var/nouns[] = list("love","hate","anger","peace","pride","sympathy","bravery","loyalty","honesty","integrity","compassion","charity","success","courage","deceit","skill","beauty","brilliance","pain","misery","beliefs","dreams","justice","truth","faith","liberty","knowledge","thought","information","culture","trust","dedication","progress","education","hospitality","leisure","trouble","friendships", "relaxation")
-	var/drinks[] = list("vodka and tonic","gin fizz","bahama mama","manhattan","black Russian","whiskey soda","long island tea","margarita","Irish coffee"," manly dwarf","Irish cream","doctor's delight","Beepksy Smash","tequilla sunrise","brave bull","gargle blaster","bloody mary","whiskey cola","white Russian","vodka martini","martini","Cuba libre","kahlua","vodka","wine","moonshine")
+	var/nouns[] = list("amore","odio","rabbia","pace","fierezza","simpatia","coraggio","lealtà","onestà","integrità","compassione","carità","successo","coraggio","inganno","abilità","bellezza","fulgore","dolore","miseria","credenze","sogni","giustizia","verità","fede","libertà","conoscenza","pensiero","informazione","cultura","verità","dedizione","progresso","educazione","ospitalità","tempo libero","guaio","amicizie","rilassamento")
+	var/drinks[] = list("vodka and tonic","gin fizz","bahama mama","manhattan","black Russian","whiskey soda","long island tea","margarita","Irish coffee"," manly dwarf","Irish cream","doctor's delight","Beepksy Smash","tequilla sunrise","brave bull","gargle blaster","bloody mary","whiskey cola","white Russian","vodka martini","martini","Cuba libre","kahlua","vodka","vino", "moonshine")
 	var/locations[] = length(stationlocs) ? stationlocs : drinks//if null, defaults to drinks instead.
 
 	var/names[] = list()
