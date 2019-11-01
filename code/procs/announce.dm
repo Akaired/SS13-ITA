@@ -3,7 +3,7 @@
 /var/datum/announcement/minor/minor_announcement = new(new_sound = 'sound/AI/commandreport.ogg',)
 
 /datum/announcement
-	var/title = "Attention"
+	var/title = "Attenzione"
 	var/announcer = ""
 	var/log = 0
 	var/sound
@@ -12,11 +12,11 @@
 	var/announcement_type = "Announcement"
 
 /datum/announcement/priority
-	title = "Priority Announcement"
+	title = "Annuncio Prioritario"
 	announcement_type = "Priority Announcement"
 
 /datum/announcement/priority/security
-	title = "Security Announcement"
+	title = "Annuncio di Sicurezza"
 	announcement_type = "Security Announcement"
 
 /datum/announcement/New(var/do_log = 0, var/new_sound = null, var/do_newscast = 0)
@@ -101,7 +101,7 @@ datum/announcement/proc/NewsCast(message as text, message_title as text)
 	GLOB.using_map.level_x_biohazard_announcement(7)
 
 /proc/ion_storm_announcement(list/affecting_z)
-	command_announcement.Announce("It has come to our attention that the [station_name()] passed through an ion storm.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", zlevels = affecting_z)
+	command_announcement.Announce("E venuto alla nostra attenzione che la [station_name()] ha attraversato una tempesta di ioni. Si prega di monitorare tutte le apparecchiature elettroniche per guasti.", "Allarme Anomalia", zlevels = affecting_z)
 
 /proc/AnnounceArrival(var/mob/living/carbon/human/character, var/datum/job/job, var/join_message)
 	if(!istype(job) || !job.announced)

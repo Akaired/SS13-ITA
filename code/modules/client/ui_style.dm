@@ -16,21 +16,21 @@
 
 
 /client/verb/change_ui()
-	set name = "Change UI"
+	set name = "Modifica l'UI"
 	set category = "OOC"
-	set desc = "Configure your user interface"
+	set desc = "Configura la tua interfaccia utente"
 
 	if(!ishuman(usr))
-		to_chat(usr, "<span class='warning'>You must be human to use this verb.</span>")
+		to_chat(usr, "<span class='warning'>Devi essere umano per utilizzare questo verb.</span>")
 		return
 
-	var/UI_style_new = input(usr, "Select a style. White is recommended for customization") as null|anything in all_ui_styles
+	var/UI_style_new = input(usr, "Scegli uno stile. Ti consigliamo il bianco per maggior customizzazione.") as null|anything in all_ui_styles
 	if(!UI_style_new) return
 
-	var/UI_style_alpha_new = input(usr, "Select a new alpha (transparency) parameter for your UI, between 50 and 255") as null|num
+	var/UI_style_alpha_new = input(usr, "Scegli un nuovo parametro alpha (transparenza) per la tua UI, tra 50 e 255") as null|num
 	if(!UI_style_alpha_new | !(UI_style_alpha_new <= 255 && UI_style_alpha_new >= 50)) return
 
-	var/UI_style_color_new = input(usr, "Choose your UI color. Dark colors are not recommended!") as color|null
+	var/UI_style_color_new = input(usr, "Scegli un colore per la tua UI. I colori scuri sono sconsigliati!") as color|null
 	if(!UI_style_color_new) return
 
 	//update UI
@@ -50,9 +50,9 @@
 		I.alpha = UI_style_alpha_new
 
 
-	if(alert("Like it? Save changes?",,"Yes", "No") == "Yes")
+	if(alert("Ti piace? Vuoi salvare i cambiamenti?",,"Si", "No") == "Si")
 		prefs.UI_style = UI_style_new
 		prefs.UI_style_alpha = UI_style_alpha_new
 		prefs.UI_style_color = UI_style_color_new
 		SScharacter_setup.queue_preferences_save(prefs)
-		to_chat(usr, "UI was saved")
+		to_chat(usr, "L'UI è stata salvata")

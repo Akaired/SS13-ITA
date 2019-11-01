@@ -2,7 +2,7 @@
 	name = "graffiti"
 	icon_state = "writing1"
 	icon = 'icons/effects/writing.dmi'
-	desc = "It looks like someone has scratched something here."
+	desc = "Sembra che qualcuno abbia graffiato qualcosa qui."
 	gender = PLURAL
 	blend_mode = BLEND_MULTIPLY
 	color = "#000000"
@@ -37,16 +37,16 @@
 /obj/effect/decal/writing/examine(mob/user)
 	. = ..(user)
 	if(.)
-		to_chat(user,  "It reads \"[message]\".")
+		to_chat(user,  "Si legge: \"[message]\".")
 	else
-		to_chat(user, "<span class='notice'>You have to go closer if you want to read it.</span>")
+		to_chat(user, "<span class='notice'>Devi avvicinarti se vuoi leggerlo.</span>")
 
 /obj/effect/decal/writing/attackby(var/obj/item/thing, var/mob/user)
 	if(isWelder(thing))
 		var/obj/item/weapon/weldingtool/welder = thing
 		if(welder.isOn() && welder.remove_fuel(0,user) && do_after(user, 5, src) && !QDELETED(src))
 			playsound(src.loc, 'sound/items/Welder2.ogg', 50, 1)
-			user.visible_message("<span class='notice'>\The [user] clears away some graffiti.</span>")
+			user.visible_message("<span class='notice'>\The [user] cancella alcuni graffiti.</span>")
 			qdel(src)
 	else if(thing.sharp)
 

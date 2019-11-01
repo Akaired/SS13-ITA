@@ -297,8 +297,8 @@ var/list/organ_cache = list()
 	if(status & ORGAN_ROBOTIC || !istype(target) || !istype(user) || (user != target && user.a_intent == I_HELP))
 		return ..()
 
-	if(alert("Do you really want to use this organ as food? It will be useless for anything else afterwards.",,"Ew, no.","Bon appetit!") == "Ew, no.")
-		to_chat(user, "<span class='notice'>You successfully repress your cannibalistic tendencies.</span>")
+	if(alert("Vuoi davvero usare questo organo come cibo? In seguito sara inutile per qualsiasi altra cosa.",,"Ew, no.","Bon appetit!") == "Ew, no.")
+		to_chat(user, "<span class='notice'>Reprimi con successo le tue tendenze cannibali.</span>")
 		return
 	if(!user.unEquip(src))
 		return

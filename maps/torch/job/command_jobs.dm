@@ -1,6 +1,6 @@
 /datum/job/captain
-	title = "Commanding Officer"
-	supervisors = "the Sol Central Government and the Sol Code of Military Justice"
+	title = "Ufficiale Comandante"
+	supervisors = "il Governo Centrale del Sistema Solare e il Codice di Giustizia Militare del Sistema Solare"
 	minimal_player_age = 7
 	economic_power = 15
 	ideal_character_age = 50
@@ -25,16 +25,16 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/captain/get_description_blurb()
-	return "You are the Commanding Officer. You are the top dog. You are an experienced professional officer in control of an entire ship, and ultimately responsible for all that happens onboard. Your job is to make sure [GLOB.using_map.full_name] fulfils its space exploration mission. Delegate to your Executive Officer, your department heads, and your Senior Enlisted Advisor to effectively manage the ship, and listen to and trust their expertise."
+	return "Tu sei l'Ufficiale Comandante. Sei il maschio alpha del branco. Sei un ufficiale professionista con esperienza nel controllo di un'intera nave e alla fine responsabile di tutto cio che accade a bordo. Il tuo compito e assicurarti che la [GLOB.using_map.full_name] compie la sua missione di esplorazione dello spazio. Delegare al proprio Ufficiale Esecutivo, ai Capi-dipartimento e al proprio Consigliere Anziano per gestire efficacemente la nave, ascoltare e fidarsi della propria esperienza."
 
 /datum/job/captain/post_equip_rank(var/mob/person, var/alt_title)
 	var/sound/announce_sound = (GAME_STATE <= RUNLEVEL_SETUP)? null : sound('sound/misc/boatswain.ogg', volume=20)
-	captain_announcement.Announce("All hands, [alt_title || title] [person.real_name] on deck!", new_sound = announce_sound)
+	captain_announcement.Announce("Equipaggio della nave, [alt_title || title] [person.real_name] sul ponte! Saluto!", new_sound = announce_sound)
 	..()
 
 /datum/job/hop
-	title = "Executive Officer"
-	supervisors = "the Commanding Officer"
+	title = "Ufficiale Esecutivo"
+	supervisors = "l'Ufficiale Comandante"
 	department = "Command"
 	department_flag = COM
 	minimal_player_age = 7
@@ -89,11 +89,11 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hop/get_description_blurb()
-	return "You are the Executive Officer. You are an experienced senior officer, second in command of the ship, and are responsible for the smooth operation of the ship under your Commanding Officer. In his absence, you are expected to take his place. Your primary duty is directly managing department heads and all those outside a department heading. You are also responsible for the contractors and passengers aboard the ship. Consider the Senior Enlisted Advisor and Bridge Officers tools at your disposal."
+	return "Tu sei l'Ufficiale Esecutivo. Sei un ufficiale anziano con esperienza, secondo al comando della nave e sei responsabile del buon funzionamento della nave sotto il tuo Ufficiale Comandate. In sua assenza, dovresti prendere il suo posto. Il tuo compito principale è la gestione diretta dei Capi-dipartimento e di tutti coloro che non fanno parte di un dipartimento. Sei anche responsabile per i mercenari appaltati e i passeggeri a bordo della nave. Considera gli strumenti del Consigliere Militare Anziano e i Guardiamarina di Ponte a tua disposizione."
 
 /datum/job/rd
-	title = "Chief Science Officer"
-	supervisors = "the Commanding Officer"
+	title = "Ufficiale Scientifico Capo"
+	supervisors = "l'Ufficiale Comandante"
 	economic_power = 20
 	minimal_player_age = 7
 	ideal_character_age = 60
@@ -135,11 +135,11 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/rd/get_description_blurb()
-	return "You are the Chief Science Officer. You are responsible for the research department. You handle the science aspects of the project and liase with the corporate interests of the Expeditionary Corps Organisation. Make sure science gets done, do some yourself, and get your scientists on away missions to find things to benefit the project. Advise the CO on science matters."
+	return "Sei l'Ufficiale Scientifico Capo. Sei responsabile del dipartimento di ricerca. Gestisci gli aspetti scientifici del progetto e interagisci con gli interessi aziendali dell'Organizzazione del Corpo Spedizionario. Assicurati che la ricerca sia fatta, fanne un po' da te e porta i tuoi scienziati in missione per trovare cose a beneficio del progetto. Consiglia il UC sulle questioni scientifiche."
 
 /datum/job/cmo
-	title = "Chief Medical Officer"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	title = "Ufficiale Medico Capo"
+	supervisors = "l'Ufficiale Comandante e l'Ufficiale Esecutivo"
 	economic_power = 10
 	minimal_player_age = 7
 	ideal_character_age = 48
@@ -178,11 +178,11 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/cmo/get_description_blurb()
-	return "You are the Chief Medical Officer. You manage the medical department. You ensure all members of medical are skilled, tasked and handling their duties. Ensure your doctors are staffing your infirmary and your corpsman/paramedics are ready for response. Act as a second surgeon or backup chemist in the absence of either. You are expected to know medical very well, along with general regulations."
+	return "Sei l'Ufficiale Medico Capo. Gestisci il dipartimento medico. Assicurati che tutti i membri del personale medico siano qualificati, conoscano i loro incarichi e che gestiscano i loro compiti. Assicurati che i tuoi medici stiano organizzando la tua infermeria e che il tuo medico / paramedico sia pronto per la risposta. Agisci come secondo chirurgo o chimico di riserva in assenza di uno dei due. Ci si aspetta che tu conosca molto bene la medicina, insieme alle norme generali di bordo."
 
 /datum/job/chief_engineer
-	title = "Chief Engineer"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	title = "Capo Ingegnere"
+	supervisors = "l'Ufficiale Comandante e l'Ufficiale Esecutivo"
 	economic_power = 9
 	ideal_character_age = 40
 	minimal_player_age = 7
@@ -233,11 +233,11 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/chief_engineer/get_description_blurb()
-	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the CO on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
+	return "Sei l'Ingegnere Capo. Gestisci il dipartimento di ingegneria. Sei responsabile dell'ingegnere anziano, che è la tua mano destra e (dovrebbe essere) un ingegnere esperto e qualificato. Delegalo e ascoltalo. Gestisci i tuoi ingegneri, assicurati che la nave rimanga accesa, che le brecce dello scafo vengano riparate e che i problemi siano risolti. Consiglia l'UC in materia di ingegneria. Sei anche responsabile della manutenzione e del controllo di tutti i robot della nave. Sei un ingegnere esperto con una ricchezza di conoscenze teoriche. Dovresti anche conoscere i regolamenti della nave ad un livello ragionevole."
 
 /datum/job/hos
-	title = "Chief of Security"
-	supervisors = "the Commanding Officer and the Executive Officer"
+	title = "Capo della Sicurezza"
+	supervisors = "l'Ufficiale Comandante e l'Ufficiale Esecutivo"
 	economic_power = 8
 	minimal_player_age = 7
 	ideal_character_age = 35
@@ -275,15 +275,15 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
-	return "You are the Chief of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Chief and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
+	return "Sei il Capo della Sicurezza. Gestisci la sicurezza della nave. gli agenti di sicurezza, nonché il guardiano delle celle e il tecnico forense. Mantieni la nave al sicuro. Gestisci le questioni di sicurezza sia interne che esterne. Tu sei la legge. Sei subordinato all'UC e all'UE. Ci si aspetta che tu conosca il Codice di Giustizia Militare del Sistema Solare e le leggi del Governo Centrale del Sistema Solare, oltre alla procedura di allarme in maniera molto precisa insieme alle norme generali del vascello."
 
 /datum/job/representative
-	title = "SolGov Representative"
+	title = "Rappresentante SolGov"
 	department = "Support"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Sol Central Government and the SCG Charter"
+	supervisors = "il Governo Centrale del Sistema Solare e la Costituzione Solariana"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 0
@@ -300,15 +300,15 @@
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 /datum/job/representative/get_description_blurb()
-	return "You are the Sol Gov Representative. You are a civilian assigned as both a diplomatic liaison for first contact and foreign affair situations on board. You are also responsible for monitoring for any serious missteps of justice, sol law or other ethical or legal issues aboard and informing and advising the Commanding Officer of them. You are a mid-level bureaucrat. You liaise between the crew and corporate interests on board. Send faxes back to Sol on mission progress and important events."
+	return "Sei il Rappresentante di SolGov. Sei un civile assegnato sia come collegamento diplomatico per il primo contatto che per le situazioni di affari esteri a bordo. Sei in oltre responsabile del monitoraggio di eventuali gravi errori di giustizia, legge solariana o altre questioni etiche o legali a bordo e hai un ruolo di informazione e consulenza al comandante. Sei un burocrate di medio livello. Fai da ponte di contatto tra l'equipaggio e gli interessi aziendali a bordo. Invia fax al Sistema Solare sui progressi della missione e su eventi importanti degni di nota."
 
 /datum/job/sea
-	title = "Senior Enlisted Advisor"
+	title = "Consigliere Militare Anziano"
 	department = "Support"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Commanding Officer and the Executive Officer"
+	supervisors = "l'Ufficiale Comandante e l'Ufficiale Esecutivo"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 7
 	economic_power = 8
@@ -345,15 +345,15 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/sea/get_description_blurb()
-	return "You are the Senior Enlisted Advisor. You are the highest enlisted person on the ship. You are directly subordinate to the CO. You advise them on enlisted concerns and provide expertise and advice to officers. You are responsible for ensuring discipline and good conduct among enlisted, as well as notifying officers of any issues and \"advising\" them on mistakes they make. You also handle various duties on behalf of the CO and XO. You are an experienced enlisted person, very likely equal only in experience to the CO and XO. You know the regulations better than anyone."
+	return "Sei il Consigliere Militare Anziano. Sei la persona più alta arruolata sulla nave. Sei direttamente subordinato all'UC. Lo consigli su questioni militari e offri esperienza e consulenza agli ufficiali. Sei responsabile di garantire disciplina e buona condotta tra gli arruolati, nonché di informare i funzionari di eventuali problemi e di "consigliarli" sugli errori che commettono. Gestisci inoltre vari compiti per conto dell'UC e dell'UE. Sei una persona arruolata con esperienza, molto probabilmente uguale solo per esperienza a UC ed UE. Conosci i regolamenti meglio di chiunque altro."
 
 /datum/job/bridgeofficer
-	title = "Bridge Officer"
+	title = "Guardiamarina di Ponte"
 	department = "Support"
 	department_flag = SPT
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Commanding Officer and heads of staff"
+	supervisors = "l'Ufficiale Comandante e i Capo-dipartimento"
 	selection_color = "#2f2f7f"
 	minimal_player_age = 0
 	economic_power = 7
@@ -390,4 +390,4 @@
 							 /datum/computer_file/program/deck_management)
 
 /datum/job/bridgeofficer/get_description_blurb()
-	return "You are a Bridge Officer. You are a very junior officer. You do not give orders of your own. You are subordinate to all of command. You handle matters on the bridge and report directly to the CO and XO. You take the Torch's helm and pilot the Aquila if needed. You monitor bridge computer programs and communications and report relevant information to command."
+	return "Sei un Guardiamarina di Ponte. Sei un ufficiale molto giovane. Non dai ordini per conto tuo. Sei subordinato a tutti i membri del Comando. Gestisci le le apparecchiature del Ponte di Comando e riferisci direttamente ad UC e UE. Prendi la cloche della Torcia e piloti l'Aquila, se necessario. Monitora i computer e le comunicazioni del Ponte di Comando e comunica le informazioni pertinenti al Comando e ai Capo-dipartimento."

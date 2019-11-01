@@ -1,6 +1,6 @@
 /obj/structure/noticeboard
 	name = "notice board"
-	desc = "A board for pinning important notices upon."
+	desc = "Una scheda per appuntare avvisi importanti."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nboard00"
 	density = 0
