@@ -67,7 +67,7 @@
 	if(M == buckled_mob)
 		return 0
 	if(istype(M, /mob/living/carbon/slime))
-		to_chat(user, "<span class='warning'>\E' troppo scivoloso [M] per assicurarsi.</span>")
+		to_chat(user, "<span class='warning'>E' troppo scivoloso [M] per assicurarsi.</span>")
 		return 0
 
 	add_fingerprint(user)

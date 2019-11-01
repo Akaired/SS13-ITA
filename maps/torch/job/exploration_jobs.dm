@@ -37,9 +37,9 @@
 							 /datum/computer_file/program/reports)
 
 /datum/job/pathfinder/get_description_blurb()
-	return "Tu sei il Pathfinder. Il tuo compito e organizzare e condurre le spedizioni verso i siti lontani, svolgendo la missione primaria della CE. Tu comandi gli esploratori. Ti assicuri che la spedizione abbia le forniture e il personale di cui ha bisogno. Puoi pilotare Charon se nessun altro fornisce un pilota. Una volta in missione, il tuo compito e quello di garantire che qualsiasi cosa di interesse scientifico sia riportata sulla nave e passata al laboratorio di ricerca competente.
+	return "Tu sei il Pathfinder. Il tuo compito e organizzare e condurre le spedizioni verso i siti lontani, svolgendo la missione primaria della CE. Tu comandi gli esploratori. Ti assicuri che la spedizione abbia le forniture e il personale di cui ha bisogno. Puoi pilotare Charon se nessun altro fornisce un pilota. Una volta in missione, il tuo compito e quello di garantire che qualsiasi cosa di interesse scientifico sia riportata sulla nave e passata al laboratorio di ricerca competente."
 
-"
+
 
 /datum/job/nt_pilot
 	title = "Pilota di Shuttle"
@@ -84,7 +84,7 @@
 	department_flag = EXP
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "l'Ufficiale Comandante, l'Ufficiale Esecutivo e l'Esploratore Capo"
+	supervisors = "l'Ufficiale Comandante, l'Ufficiale Esecutivo e l'Esploratore Capo."
 	selection_color = "#68099e"
 	ideal_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/torch/crew/exploration/explorer

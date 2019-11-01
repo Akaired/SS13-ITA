@@ -106,9 +106,8 @@
 							 /datum/computer_file/program/shields_monitor)
 
 /datum/job/engineer/get_description_blurb()
-	return "Sei un ingegnere. Operi con uno dei tanti titoli e potresti essere altamente specializzato in una specifica area di ingegneria. Probabilmente hai almeno una familiarita generale con la maggior parte delle altre aree, anche se questo non e previsto. Sei subordinato all'ingegnere senior e all'ingegnere capo e devi seguirli
+	return "Sei un ingegnere. Operi con uno dei tanti titoli e potresti essere altamente specializzato in una specifica area di ingegneria. Probabilmente hai almeno una familiarita generale con la maggior parte delle altre aree, anche se questo non e previsto. Sei subordinato all'ingegnere senior e all'ingegnere capo e devi seguirli."
 
-."
 
 /datum/job/engineer_trainee
 	title = "Apprendista Ingegnere"
