@@ -1,18 +1,18 @@
 /datum/job/liaison
-	title = "Workplace Liaison"
+	title = "Rappresentante Sindacalista"
 	department = "Support"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Corporate Regulations, the Union Charter, and the Expeditionary Corps Organisation"
+	supervisors = "Regolamenti Aziendali, Costituzione Sindaqcalista, e l'Organizzazione dei Corpi Spedizionari"
 	selection_color = "#2f2f7f"
 	economic_power = 15
 	minimal_player_age = 0
 	alt_titles = list(
-		"Corporate Liaison",
-		"Union Representative" = /decl/hierarchy/outfit/job/torch/passenger/workplace_liaison/union_rep,
-		"Corporate Representative",
-		"Corporate Executive"
+		"Rappresentante Aziendale",
+		"Segretario del Sindacato dei Lavoratori" = /decl/hierarchy/outfit/job/torch/passenger/workplace_liaison/union_rep,
+		"Rappresentante della Corporazione",
+		"Agente Esecutivo Aziendale"
 		)
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/workplace_liaison
 	allowed_branches = list(/datum/mil_branch/civilian)
@@ -27,23 +27,23 @@
 	software_on_spawn = list(/datum/computer_file/program/reports)
 
 /datum/job/liaison/get_description_blurb()
-	return "You are the Workplace Liaison. You are a civilian employee of EXO, the Expeditionary Corps Organisation, the government-owned corporate conglomerate that partially funds the Torch. You are on board the vessel to promote corporate interests and protect the rights of the contractors on board as their union leader. You are not internal affairs. You advise command on corporate and union matters and contractors on their rights and obligations. Maximise profit. Be the shady corporate shill you always wanted to be."
+	return "Sei il rappresentante sindacalista. Sei un impiegato civile di EXO, dei Corpi Spedizionari, il conglomerato aziendale statale che finanzia la Torcia. Sei a bordo della nave per promuovere gli interessi aziendali e proteggere i diritti degli impiegati come il loro Sindacalista. Non fai parte degli Affari Interni. Fornisci consulenza in materia di questioni societarie e sindacali e appaltatori sui loro diritti e doveri. Massimizza il profitto. Sii lo shady shill aziendale losco che hai sempre desiderato essere."
 
 /datum/job/liaison/post_equip_rank(var/mob/person, var/alt_title)
 	var/my_title = "\a ["\improper [(person.mind ? (person.mind.role_alt_title ? person.mind.role_alt_title : person.mind.assigned_role) : "Loss Prevention Associate")]"]"
 	for(var/mob/M in GLOB.player_list)
 		if(M.client && M.mind)
-			if(M.mind.assigned_role == "Loss Prevention Associate")
-				to_chat(M, SPAN_NOTICE("<b>One of your employers, [my_title] named [person.real_name], is present on [GLOB.using_map.full_name].</b>"))
+			if(M.mind.assigned_role == "Agente Prevenzione Perdite")
+				to_chat(M, SPAN_NOTICE("<b>Uno dei tuoi datori di lavoro, [my_title] chiamato [person.real_name], è presente sulla [GLOB.using_map.full_name].</b>"))
 	..()
 
 /datum/job/bodyguard
-	title = "Loss Prevention Associate"
+	title = "Agente Previsione Perdite"
 	department = "Support"
 	department_flag = SPT
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Workplace Liaison"
+	supervisors = "il Rappresentante Sindacalista"
 	selection_color = "#3d3d7f"
 	economic_power = 12
 	minimal_player_age = 7
@@ -59,9 +59,9 @@
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
 	alt_titles = list(
-		"Union Enforcer" = /decl/hierarchy/outfit/job/torch/passenger/corporate_bodyguard/union,
-		"Executive Assistant",
-		"Asset Protection Agent"
+		"Agente Sindacale" = /decl/hierarchy/outfit/job/torch/passenger/corporate_bodyguard/union,
+		"Assistente Esecutivo",
+		"Agente Protezione Asset"
 	)
 	skill_points = 20
 	access = list(access_liaison, access_security, access_medical,
@@ -74,17 +74,17 @@
 /datum/job/bodyguard/is_position_available()
 	if(..())
 		for(var/mob/M in GLOB.player_list)
-			if(M.client && M.mind && M.mind.assigned_role == "Workplace Liaison")
+			if(M.client && M.mind && M.mind.assigned_role == "Rappresentante Sindacalista")
 				return TRUE
 	return FALSE
 
 /datum/job/bodyguard/get_description_blurb()
-	return "You are the Loss Prevention Associate. You are an employee of one of the corporations that make up the Expeditionary Corps Organisation, and your job is to prevent the loss of the Liason's life - even at the cost of your own. Good luck."
+	return "Tu sei l'agente prevenzione perdite. Sei un impiegato di una delle corporazioni che finanziano il Corpo Spedizionario, e il tuo lavoro è proteggere la vita del Rappresentante Sindacale, anche a spese della tua. Buona fortuna."
 
 /datum/job/bodyguard/post_equip_rank(var/mob/person, var/alt_title)
 	var/my_title = "\a ["\improper [(person.mind ? (person.mind.role_alt_title ? person.mind.role_alt_title : person.mind.assigned_role) : "Loss Prevention Associate")]"]"
 	for(var/mob/M in GLOB.player_list)
 		if(M.client && M.mind)
-			if(M.mind.assigned_role == "Workplace Liaison")
-				to_chat(M, SPAN_NOTICE("<b>Your bodyguard, [my_title] named [person.real_name], is present on [GLOB.using_map.full_name].</b>"))
+			if(M.mind.assigned_role == "Rappresentante Sindacale")
+				to_chat(M, SPAN_NOTICE("<b>La tua guardia del corpo, [my_title] chiamata [person.real_name], è presente sulla [GLOB.using_map.full_name].</b>"))
 	..()
