@@ -14,7 +14,7 @@
 
 /obj/structure/attack_generic(var/mob/user, var/damage, var/attack_verb, var/wallbreaker)
 	if(wallbreaker && damage && breakable)
-		visible_message("<span class='danger'>\The [user] smashes the \[src] to pieces!</span>")
+		visible_message("<span class='danger'>\The [user] spacca \[src] a pezzettini!</span>")
 		attack_animation(user)
 		qdel(src)
 		return 1
@@ -62,7 +62,7 @@
 
 /obj/structure/grab_attack(var/obj/item/grab/G)
 	if (!G.force_danger())
-		to_chat(G.assailant, "<span class='danger'>You need a better grip to do that!</span>")
+		to_chat(G.assailant, "<span class='danger'>Ti serve più grip per fare quella cosa!</span>")
 		return TRUE
 	if (G.assailant.a_intent == I_HURT)
 		// Slam their face against the table.
@@ -70,7 +70,7 @@
 		if (prob(30 * (1 - blocked)))
 			G.affecting.Weaken(5)
 		G.affecting.apply_damage(8, BRUTE, BP_HEAD)
-		visible_message("<span class='danger'>[G.assailant] slams [G.affecting]'s face against \the [src]!</span>")
+		visible_message("<span class='danger'>[G.assailant] sbatte la faccia di [G.affecting]'s su \the [src]!</span>")
 		if (material)
 			playsound(loc, material.tableslam_noise, 50, 1)
 		else
@@ -78,7 +78,7 @@
 		var/list/L = take_damage(rand(1,5))
 		for(var/obj/item/weapon/material/shard/S in L)
 			if(S.sharp && prob(50))
-				G.affecting.visible_message("<span class='danger'>\The [S] slices into [G.affecting]'s face!</span>", "<span class='danger'>\The [S] slices into your face!</span>")
+				G.affecting.visible_message("<span class='danger'>\The [S] si conficca sulla faccia di [G.affecting]!</span>", "<span class='danger'>\The [S] si conficca sulla tua faccia!</span>")
 				G.affecting.standard_weapon_hit_effects(S, G.assailant, S.force*2, BP_HEAD)
 		qdel(G)
 	else if(atom_flags & ATOM_FLAG_CLIMBABLE)
@@ -88,7 +88,7 @@
 			return TRUE
 		G.affecting.forceMove(src.loc)
 		G.affecting.Weaken(rand(2,5))
-		visible_message("<span class='danger'>[G.assailant] puts [G.affecting] on \the [src].</span>")
+		visible_message("<span class='danger'>[G.assailant] mette [G.affecting] sul \the [src].</span>")
 		qdel(G)
 		return TRUE
 

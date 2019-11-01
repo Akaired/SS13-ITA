@@ -5,12 +5,12 @@ var/church_name = null
 
 	var/name = ""
 
-	name += pick("Holy", "United", "First", "Second", "Last")
+	name += pick("Sacro", "Unito", "Primo", "Secondo", "Ultimo")
 
 	if (prob(20))
 		name += " Space"
 
-	name += " " + pick("Church", "Cathedral", "Body", "Worshippers", "Movement", "Witnesses")
+	name += " " + pick("Chiesa", "Cattedrale", "Corpo", "Fedeli", "Movimento", "Testimoni")
 	name += " of [religion_name()]"
 
 	return name
@@ -38,7 +38,7 @@ var/religion_name = null
 
 	var/name = ""
 
-	name += pick("bee", "science", "edu", "captain", "assistant", "monkey", "alien", "space", "unit", "sprocket", "gadget", "bomb", "revolution", "beyond", "station", "goon", "robot", "ivor", "hobnob")
+	name += pick("ape", "scienza", "edu", "capitan", "assistente", "scimmia", "alieno", "spazio", "unità", "sprocket", "gadget", "bomba", "rivoluzione", "oltre", "stazione", "goon", "robot", "ivor", "hobnob")
 	name += pick("ism", "ia", "ology", "istism", "ites", "ick", "ian", "ity")
 
 	return capitalize(name)
@@ -53,7 +53,7 @@ var/religion_name = null
 	return "[capitalize(pick(GLOB.last_names))]-[pick(GLOB.greek_letters)]"
 
 /proc/generate_planet_type()
-	return pick("terrestial planet", "ice planet", "dwarf planet", "desert planet", "ocean planet", "lava planet", "gas giant", "forest planet")
+	return pick("pianeta terrestre", "pianeta ghiacciato", "nanopianeta", "pianeta desertico", "pianeta oceanico", "pianeta di lava", "gigante gassoso", "pianeta foresta")
 
 /proc/station_name()
 	if(!GLOB.using_map)
