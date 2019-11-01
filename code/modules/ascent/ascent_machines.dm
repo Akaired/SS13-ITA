@@ -10,8 +10,8 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	base_type = /obj/machinery/optable
 
 /obj/machinery/portable_atmospherics/hydroponics/ascent
-	name = "mantid algae vat"
-	desc = "Some kind of strange alien hydroponics technology."
+	name = "vasca di alghe mantidi"
+	desc = "Una strana tecnologia idroponica aliena."
 	icon = 'icons/obj/machines/mantid_hydroponics.dmi'
 	closed_system = TRUE
 	construct_state = /decl/machine_construction/default/no_deconstruct
@@ -39,38 +39,38 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	scrubbing_gas -= "methyl_bromide"
 
 /obj/machinery/recharge_station/ascent
-	name = "mantid recharging dock"
-	desc = "An oddly organic aperture stuffed with power connectors."
+	name = "dock di ricarica mantide"
+	desc = "Una strana apertura organica piena di cavi e tubi elettronici."
 	icon = 'icons/obj/machines/mantid_charger.dmi'
 	overlay_icon = 'icons/obj/machines/mantid_charger.dmi'
 	construct_state = /decl/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/recharge_station
 
 /obj/machinery/body_scanconsole/ascent
-	name = "mantid scanner console"
-	desc = "Some kind of strange alien console technology."
+	name = "console scanner mantide"
+	desc = "Una strana console aliena."
 	req_access = list(access_ascent)
 	icon = 'icons/obj/ascent_sleepers.dmi'
 	construct_state = /decl/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/body_scanconsole
 
 /obj/machinery/bodyscanner/ascent
-	name = "mantid body scanner"
-	desc = "Some kind of strange alien body scanning technology."
+	name = "body scanner mantide"
+	desc = "Uno strano scanner medico alieno."
 	icon = 'icons/obj/ascent_sleepers.dmi'
 	construct_state = /decl/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/bodyscanner
 
 /obj/machinery/sleeper/ascent
-	name = "mantid sleeper"
-	desc = "Some kind of strange alien sleeper technology."
+	name = "addormentatore mantide"
+	desc = "Uno strano addormentatore mantide con supporto alle dialisi."
 	icon = 'icons/obj/ascent_sleepers.dmi'
 	base_type = /obj/machinery/sleeper
 	construct_state = /decl/machine_construction/default/no_deconstruct
 
 /obj/machinery/autolathe/ascent
-	name = "\improper Ascent nanofabricator"
-	desc = "A squat, complicated fabrication system clad in purple polymer."
+	name = "\improper nanofabricatore Ascent"
+	desc = "Un contenuto e complicato sistema di fabricazione circondato da uno strano polimero viola."
 	icon = 'icons/obj/nanofabricator.dmi'
 	req_access = list(access_ascent)
 	base_type = /obj/machinery/autolathe
@@ -87,7 +87,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	color = COLOR_GRAY40
 
 /obj/machinery/door/airlock/ascent
-	desc = "Some kind of strange alien door technology."
+	desc = "Una strana porta aliena."
 	icon =                'icons/obj/doors/ascent/base.dmi'
 	bolts_file =          'icons/obj/doors/ascent/lights_bolts.dmi'
 	deny_file =           'icons/obj/doors/ascent/lights_deny.dmi'
@@ -130,9 +130,9 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	dir = WEST
 
 /obj/machinery/light/ascent
-	name = "mantid light"
+	name = "luce mantide"
 	light_type = /obj/item/weapon/light/tube/ascent
-	desc = "Some kind of strange alien lighting technology."
+	desc = "Strana tecnologia di illuminazione aliena."
 
 /obj/machinery/computer/ship/helm/ascent
 	icon_state = "ascent"
@@ -169,8 +169,8 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 // This is an absolutely stupid machine. Basically the same as the debug one with some alterations.
 // It is a placeholder for a proper reactor setup (probably a RUST descendant)
 /obj/machinery/power/ascent_reactor
-	name = "mantid fusion stack"
-	desc = "A tall, gleaming assemblage of advanced alien machinery. It hums and crackles with restrained power."
+	name = "stack di fusione mantide"
+	desc = "Un assemblaggio alto e scintillante di macchinari alieni avanzati. Ronza e scoppietta con picchi energetici variabili."
 	icon = 'icons/obj/machines/power/fusion_core.dmi'
 	icon_state = "core1"
 	color = COLOR_PURPLE
@@ -184,13 +184,13 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.species.name != SPECIES_MANTID_GYNE && H.species.name != SPECIES_MONARCH_QUEEN)
-			to_chat(H, SPAN_WARNING("You have no idea how to use \the [src]."))
+			to_chat(H, SPAN_WARNING("Non hai idea di come usare \the [src]."))
 			return
 	else if(!istype(user, /mob/living/silicon/robot/flying/ascent))
-		to_chat(user, SPAN_WARNING("You have no idea how to interface with \the [src]."))
+		to_chat(user, SPAN_WARNING("Non hai idea di come interfacciarti a \the [src]."))
 		return
 
-	user.visible_message(SPAN_NOTICE("\The [user] switches \the [src] [on ? "off" : "on"]."))
+	user.visible_message(SPAN_NOTICE("\The [user] accende \the [src] [on ? "off" : "on"]."))
 	on = !on
 	update_icon()
 
@@ -227,8 +227,8 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 		add_avail(output_power)
 
 /obj/machinery/power/smes/buildable/power_shuttle/ascent
-	name = "mantid battery"
-	desc = "Some kind of strange alien SMES technology."
-	icon = 'icons/obj/machines/power/mantid_smes.dmi'	
+	name = "batteria mantide"
+	desc = "Una strana batteria aliena."
+	icon = 'icons/obj/machines/power/mantid_smes.dmi'
 	overlay_icon = 'icons/obj/machines/power/mantid_smes.dmi'
 	construct_state = /decl/machine_construction/default/no_deconstruct

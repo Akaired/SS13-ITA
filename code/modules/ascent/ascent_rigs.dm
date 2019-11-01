@@ -1,7 +1,7 @@
 // Rigs and gear themselves.
 /obj/item/weapon/rig/mantid
-	name = "alate support exosuit"
-	desc = "A powerful support exosuit with integrated power supply, weapon and atmosphere. It's closer to a mech than a rig."
+	name = "esotuta alata di supporto"
+	desc = "Un potente supporto di supporto con alimentatore integrato, armi e atmosfera. E piu vicino a un mech che a un rig."
 	icon_state = "kexosuit"
 	item_state = null
 	suit_type = "support exosuit"
@@ -39,10 +39,10 @@
 
 // Renamed blade.
 /obj/item/rig_module/mounted/energy_blade/mantid
-	name = "nanoblade projector"
-	desc = "A fusion-powered blade nanofabricator of Ascent design."
+	name = "proiettore a nanolame"
+	desc = "Un nanofabricatore a lame alimentato a fusione con design Ascent."
 	interface_name = "nanoblade projector"
-	interface_desc = "A fusion-powered blade nanofabricator of Ascent design."
+	interface_desc = "Un nanofabricatore a lame alimentato a fusione con design Ascent."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "blade"
 	interface_name = "nanoblade"
@@ -50,28 +50,28 @@
 	gun = null
 
 /obj/item/rig_module/mounted/flechette_rifle
-	name = "flechette rifle"
-	desc = "A flechette nanofabricator and launch system of Ascent design."
+	name = "fucile flechette"
+	desc = "Un nanofabricatore flechette con un sistema di lancio di design Ascent."
 	interface_name = "flechette rifle"
-	interface_desc = "A flechette nanofabricator and launch system of Ascent design."
+	interface_desc = "Un nanofabricatore flechette con un sistema di lancio di design Ascent."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "rifle"
 	gun = /obj/item/weapon/gun/magnetic/railgun/flechette/ascent
 
 /obj/item/rig_module/mounted/particle_rifle
-	name = "particle rifle"
-	desc = "A mounted particle rifle of Ascent design."
+	name = "fucile a particelle"
+	desc = "Un fucile a particelle montato con design Ascent."
 	interface_name = "particle rifle"
-	interface_desc = "A mounted particle rifle of Ascent design."
+	interface_desc = "Un fucile a particelle montato con design Ascent."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "rifle"
 	gun = /obj/item/weapon/gun/energy/particle
 
 /obj/item/rig_module/device/multitool
-	name = "mantid integrated multitool"
-	desc = "A limited-sentience integrated multitool capable of interfacing with any number of systems."
+	name = "multitool integrato mantide"
+	desc = "Un multitool integrato a sensibilita limitata in grado di interfacciarsi con qualsiasi numero di sistemi."
 	interface_name = "multitool"
-	interface_desc = "A limited-sentience integrated multitool capable of interfacing with any number of systems."
+	interface_desc = "Un multitool integrato a sensibilita limitata in grado di interfacciarsi con qualsiasi numero di sistemi."
 	device = /obj/item/device/multitool/mantid
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "multitool"
@@ -79,10 +79,10 @@
 	selectable = TRUE
 
 /obj/item/rig_module/device/cable_coil
-	name = "mantid cable extruder"
-	desc = "A cable nanofabricator of Ascent design."
+	name = "estrusore di cavi mantide"
+	desc = "Un nanofabricatore di cavi con design Ascent."
 	interface_name = "cable fabricator"
-	interface_desc = "A cable nanofabricator of Ascent design."
+	interface_desc = "Un nanofabricatore di cavi con design Ascent."
 	device = /obj/item/stack/cable_coil/fabricator
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "cablecoil"
@@ -90,10 +90,10 @@
 	selectable = TRUE
 
 /obj/item/rig_module/device/welder
-	name = "mantid welding arm"
-	desc = "An electrical cutting torch of Ascent design."
+	name = "braccio saldatore mantide"
+	desc = "Una torcia elettrica da taglio di design Ascent."
 	interface_name = "welding arm"
-	interface_desc = "An electrical cutting torch of Ascent design."
+	interface_desc = "Una torcia elettrica da taglio di design Ascent."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "welder1"
 	engage_string = "Toggle Welder"
@@ -102,10 +102,10 @@
 	selectable = TRUE
 
 /obj/item/rig_module/device/clustertool
-	name = "mantid clustertool"
-	desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
+	name = "clustertool mantide"
+	desc = "Un complesso complesso di teste modulari autoguidanti in grado di eseguire la maggior parte delle attivita manuali."
 	interface_name = "modular clustertool"
-	interface_desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
+	interface_desc = "Un complesso complesso di teste modulari autoguidanti in grado di eseguire la maggior parte delle attivita manuali."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "clustertool"
 	engage_string = "Select Mode"
@@ -115,8 +115,8 @@
 
 // Atmosphere/jetpack filler.
 /obj/item/weapon/tank/mantid
-	name = "mantid gas reactor"
-	desc = "A mantid gas processing plant that continuously synthesises 'breathable' atmosphere."
+	name = "reattore di gas mantide"
+	desc = "Un impianto di trattamento del gas mantide che sintetizza continuamente atmosfera 'respirabile'. Forse non per gli umani."
 	icon_state = "bromomethane"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	volume = 180
@@ -131,7 +131,7 @@
 	. = ..()
 
 /obj/item/weapon/tank/mantid/oxygen
-	name = "serpentid gas reactor"
+	name = "reattore a gas serpentide"
 	refill_gas_type = "oxygen"
 	distribute_pressure = 31
 
@@ -143,10 +143,10 @@
 
 // Chem dispenser.
 /obj/item/rig_module/chem_dispenser/mantid
-	name = "mantid chemical injector"
-	desc = "A compact chemical dispenser of mantid design."
+	name = "iniettore chimico mantide"
+	desc = "Un distributore chimico compatto dal design mantide."
 	interface_name = "mantid chemical injector"
-	interface_desc = "A compact chemical dispenser of mantid design."
+	interface_desc = "Un distributore chimico compatto dal design mantide."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "injector"
 	charges = list(
@@ -158,7 +158,7 @@
 
 // Rig definitions.
 /obj/item/weapon/rig/mantid/gyne
-	name = "gyne support exosuit"
+	name = "esotuta di supporto gina"
 	armor = list(melee = 80, bullet = 80, laser = 70, energy = 45, bomb = 75, bio = 100, rad = 100)
 	icon_override = 'icons/mob/species/mantid/onmob_back_gyne.dmi'
 	mantid_caste = SPECIES_MANTID_GYNE
@@ -179,7 +179,7 @@
 	)
 
 /obj/item/weapon/rig/mantid/nabber
-	name = "serpentid support exosuit"
+	name = "esotuta di supporto serpentide"
 	icon_override = 'icons/mob/species/nabber/onmob_back_gas.dmi'
 	mantid_caste = SPECIES_NABBER
 	air_type =   /obj/item/weapon/tank/mantid/oxygen
@@ -190,7 +190,7 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET
 
 /obj/item/weapon/rig/mantid/nabber/queen
-	name = "small support exosuit"
+	name = "esotuta di supporto piccola"
 	mantid_caste = SPECIES_MONARCH_QUEEN
 	initial_modules = list(
 		/obj/item/rig_module/vision/thermal,
@@ -213,12 +213,12 @@
 	if(. && slot == slot_back)
 		var/mob/living/carbon/human/H = M
 		if(!istype(H) || H.species.get_bodytype(H) != mantid_caste)
-			to_chat(H, "<span class='danger'>Your species cannot wear \the [src].</span>")
+			to_chat(H, "<span class='danger'>La tua razza non può indossare \the [src].</span>")
 			. = 0
 
 /obj/item/clothing/head/helmet/space/rig/mantid
 	light_color = "#00ffff"
-	desc = "More like a torpedo casing than a helmet."
+	desc = "Piu un involucro di siluro che un elmetto."
 	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_head_gyne.dmi',
@@ -227,7 +227,7 @@
 		)
 
 /obj/item/clothing/suit/space/rig/mantid
-	desc = "It's closer to a mech than a suit."
+	desc = "E piu vicino a un mech che a una tuta."
 	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_suit_gyne.dmi',
@@ -244,7 +244,7 @@
 	)
 
 /obj/item/clothing/shoes/magboots/rig/mantid
-	desc = "It's like a highly advanced forklift."
+	desc = "E come un carrello elevatore altamente avanzato."
 	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE)
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_shoes_gyne.dmi',
@@ -252,7 +252,7 @@
 		)
 
 /obj/item/clothing/gloves/rig/mantid
-	desc = "They look like a cross between a can opener and a Swiss army knife the size of a shoebox."
+	desc = "Sembrano un incrocio tra un apriscatole e un coltellino svizzero delle dimensioni di una scatola da scarpe."
 	species_restricted = list(SPECIES_MANTID_GYNE, SPECIES_MANTID_ALATE, SPECIES_NABBER)
 	sprite_sheets = list(
 		SPECIES_MANTID_GYNE =  'icons/mob/species/mantid/onmob_gloves_gyne.dmi',

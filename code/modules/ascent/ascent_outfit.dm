@@ -1,5 +1,5 @@
 /decl/hierarchy/outfit/job/ascent
-	name = "Ascent - Gyne"
+	name = "Ascent - Gyna"
 	uniform =  /obj/item/clothing/under/ascent
 	id_type =  /obj/item/weapon/card/id/ascent
 	shoes =    /obj/item/clothing/shoes/magboots/ascent
@@ -9,12 +9,12 @@
 	flags =    0
 
 /decl/hierarchy/outfit/job/ascent/tech
-	name = "Ascent - Technician"
+	name = "Ascent - Tecnico"
 	suit = /obj/item/clothing/suit/storage/ascent
 
 /obj/item/clothing/shoes/magboots/ascent
-	name = "mantid mag-claws"
-	desc = "A set of powerful gripping claws."
+	name = "artigli magnetici mantidi"
+	desc = "Un set di potenti artigli magnetici."
 	icon_state = "ascent_boots0"
 	icon_base = "ascent_boots"
 	species_restricted = list(SPECIES_MANTID_ALATE, SPECIES_MANTID_GYNE)
@@ -24,16 +24,16 @@
 	)
 
 /obj/item/clothing/under/ascent
-	name = "mantid undersuit"
-	desc = "A ribbed, spongy undersuit of some sort. It has a big sleeve for a tail, so it probably isn't for humans."
+	name = "sottotuta mantide"
+	desc = "Una tuta a coste e spugnosa di qualche tipo. Ha una manica grande per una coda, quindi probabilmente non e per gli umani."
 	species_restricted = ALL_ASCENT_SPECIES
 	icon_state = "ascent"
 	worn_state = "ascent"
 	color = COLOR_DARK_GUNMETAL
 
 /obj/item/clothing/suit/storage/ascent
-	name = "mantid gear harness"
-	desc = "A complex tangle of articulated cables and straps."
+	name = "imbracatura mantide"
+	desc = "Un groviglio complesso di cavi e cinghie articolati."
 	species_restricted = ALL_ASCENT_SPECIES
 	icon_state = "ascent_harness"
 	body_parts_covered = 0
@@ -42,9 +42,9 @@
 	. = ..()
 	for(var/tool in list(
 		/obj/item/weapon/gun/energy/particle/small,
-		/obj/item/device/multitool/mantid, 
-		/obj/item/clustertool, 
-		/obj/item/clustertool, 
+		/obj/item/device/multitool/mantid,
+		/obj/item/clustertool,
+		/obj/item/clustertool,
 		/obj/item/weapon/weldingtool/electric/mantid,
 		/obj/item/stack/medical/resin
 	))

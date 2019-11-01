@@ -1,6 +1,6 @@
 /decl/flooring/tiling_ascent
-	name = "floor"
-	desc = "An odd jigsaw puzzle of alloy plates."
+	name = "pavimento"
+	desc = "Uno strano puzzle di piastre in lega."
 	icon = 'icons/turf/flooring/alium.dmi'
 	icon_base = "jaggy"
 	has_base_range = 6

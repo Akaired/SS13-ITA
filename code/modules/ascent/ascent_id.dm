@@ -1,9 +1,9 @@
 // ID 'card'
 /obj/item/weapon/card/id/ascent
-	name = "alien chip"
+	name = "chip alieno"
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "access_card"
-	desc = "A slender, complex chip of alien circuitry."
+	desc = "Un complesso e minuscolo chip alieno."
 	access = list(access_ascent)
 
 /obj/item/weapon/card/id/ascent/GetAccess()
@@ -28,7 +28,7 @@
 // ID implant/organ/interface device.
 /obj/item/organ/internal/controller
 	name = "system controller"
-	desc = "A fist-sized lump of complex circuitry."
+	desc = "Una pepita dalla grandezza di un pugno piena di circuiti alieni."
 	icon = 'icons/obj/ascent.dmi'
 	icon_state = "plant"
 	parent_organ = BP_CHEST
