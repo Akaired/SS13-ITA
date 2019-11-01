@@ -5,12 +5,14 @@ var/church_name = null
 
 	var/name = ""
 
-	name += pick("Santo", "Unità", "Primo", "Secondo", "Ultimo")
+	name += pick("Santo", "Unito", "Primo", "Secondo", "Ultimo")
 
 	if (prob(20))
 		name += " Spazio"
 
+
 	name += " " + pick("Chiesa", "Cattedrale", "Corpo", "Credenti", "Movimento", "Testimoni")
+
 	name += " of [religion_name()]"
 
 	return name
@@ -38,8 +40,10 @@ var/religion_name = null
 
 	var/name = ""
 
-	name += pick("ape", "scienza", "educazione", "capitano", "assistente", "scimmia", "alieno", "spazio", "unità", "rocchetto", "gadget", "bomba", "rivoluzione", "oltre", "stazione", "radiceor", "hobnob")
+
+	name += pick("ape", "scienza", "educazione", "capitano", "assistente", "scimmia", "alieno", "spazio", "unitï¿½", "rocchetto", "gadget", "bomba", "rivoluzione", "oltre", "stazione", "radiceor", "hobnob")
 	name += pick("ism", "ia", "olog", "istism", "ites", "ick", "ian", "ity")
+
 
 	return capitalize(name)
 
@@ -53,7 +57,8 @@ var/religion_name = null
 	return "[capitalize(pick(GLOB.last_names))]-[pick(GLOB.greek_letters)]"
 
 /proc/generate_planet_type()
-	return pick("pianeta terrrstre", "pianeta ghiacciato", "pianeta deserto", "pianeta oceanico", "pianeta di lava", "gigante gassoso", "pianeta di foreste")
+
+	return pick("pianeta terrestre", "pianeta ghiacciato", "nanopianeta", "pianeta desertico", "pianeta oceanico", "pianeta di lava", "gigante gassoso", "pianeta foresta")
 
 /proc/station_name()
 	if(!GLOB.using_map)
@@ -78,8 +83,8 @@ var/religion_name = null
 				GLOB.using_map.station_name += name + " "
 
 		//For special days like christmas, easter, new-years etc ~Carn
-		if("Venerdì 13")
-			name = pick("Mike","Venerdì", "Malvagio", "Myers", "Assassino", "Mortale", "Pugnalato")
+		if("Venerdï¿½ 13")
+			name = pick("Mike","Venerdï¿½", "Malvagio", "Myers", "Assassino", "Mortale", "Pugnalato")
 			GLOB.using_map.station_name += name + " "
 			random = 13
 		else
@@ -185,7 +190,7 @@ var/syndicate_code_response//Code response for traitors.
 	)
 
 	var/safety[] = list(1,2,3)//Tells the proc which options to remove later on.
-	var/nouns[] = list("amore","odio","rabbia","pace","fierezza","simpatia","coraggio","lealtà","onestà","integrità","compassione","carità","successo","coraggio","inganno","abilità","bellezza","fulgore","dolore","miseria","credenze","sogni","giustizia","verità","fede","libertà","conoscenza","pensiero","informazione","cultura","verità","dedizione","progresso","educazione","ospitalità","tempo libero","guaio","amicizie","rilassamento")
+	var/nouns[] = list("amore","odio","rabbia","pace","fierezza","simpatia","coraggio","lealtï¿½","onestï¿½","integritï¿½","compassione","caritï¿½","successo","coraggio","inganno","abilitï¿½","bellezza","fulgore","dolore","miseria","credenze","sogni","giustizia","veritï¿½","fede","libertï¿½","conoscenza","pensiero","informazione","cultura","veritï¿½","dedizione","progresso","educazione","ospitalitï¿½","tempo libero","guaio","amicizie","rilassamento")
 	var/drinks[] = list("vodka and tonic","gin fizz","bahama mama","manhattan","black Russian","whiskey soda","long island tea","margarita","Irish coffee"," manly dwarf","Irish cream","doctor's delight","Beepksy Smash","tequilla sunrise","brave bull","gargle blaster","bloody mary","whiskey cola","white Russian","vodka martini","martini","Cuba libre","kahlua","vodka","vino", "moonshine")
 	var/locations[] = length(stationlocs) ? stationlocs : drinks//if null, defaults to drinks instead.
 
