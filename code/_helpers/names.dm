@@ -5,10 +5,12 @@ var/church_name = null
 
 	var/name = ""
 
+
 	name += pick("Sacro", "Unito", "Primo", "Secondo", "Ultimo")
 
+
 	if (prob(20))
-		name += " Space"
+		name += " Spazio"
 
 	name += " " + pick("Chiesa", "Cattedrale", "Corpo", "Fedeli", "Movimento", "Testimoni")
 	name += " of [religion_name()]"
@@ -38,7 +40,7 @@ var/religion_name = null
 
 	var/name = ""
 
-	name += pick("ape", "scienza", "edu", "capitan", "assistente", "scimmia", "alieno", "spazio", "unità", "sprocket", "gadget", "bomba", "rivoluzione", "oltre", "stazione", "goon", "robot", "ivor", "hobnob")
+	name += pick("ape", "scienza", "edu", "capitan", "assistente", "scimmia", "alieno", "spazio", "unitï¿½", "sprocket", "gadget", "bomba", "rivoluzione", "oltre", "stazione", "goon", "robot", "ivor", "hobnob")
 	name += pick("ism", "ia", "ology", "istism", "ites", "ick", "ian", "ity")
 
 	return capitalize(name)
