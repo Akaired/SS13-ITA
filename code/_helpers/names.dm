@@ -5,10 +5,10 @@ var/church_name = null
 
 	var/name = ""
 
-	name += pick("Holy", "United", "First", "Second", "Last")
+	name += pick("Holy", "United", "Primo", "Secondo", "Ultimo")
 
 	if (prob(20))
-		name += " Space"
+		name += " Spazio"
 
 	name += " " + pick("Church", "Cathedral", "Body", "Worshippers", "Movement", "Witnesses")
 	name += " of [religion_name()]"
