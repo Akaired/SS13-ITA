@@ -1,9 +1,9 @@
 /obj/item/weapon/weldingtool
-	name = "welding tool"
+	name = "saldatore"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder_m"
 	item_state = "welder"
-	desc = "A portable welding gun with a port for attaching fuel tanks."
+	desc = "Una pistola per saldatura portatile con una porta per il collegamento di serbatoi di carburante."
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	center_of_mass = "x=14;y=15"
@@ -45,9 +45,9 @@
 	if (istype(src, /obj/item/weapon/weldingtool/electric))
 		return near
 	if (!tank)
-		to_chat(user, "There is no [welding_resource] source attached.")
+		to_chat(user, "Non c'è nessuna fonte [welding_resource] attaccata.")
 	else
-		to_chat(user, (near ? "It has [get_fuel()] [welding_resource] remaining. " : "") + "[tank] is attached.")
+		to_chat(user, (near ? "Ha circa [get_fuel()] [welding_resource] restante. " : "") + "[tank] è attaccata.")
 
 /obj/item/weapon/weldingtool/MouseDrop(atom/over)
 	if(!CanMouseDrop(over, usr))
@@ -56,10 +56,10 @@
 	if(istype(over, /obj/item/weapon/weldpack))
 		var/obj/item/weapon/weldpack/wp = over
 		if(wp.welder)
-			to_chat(usr, "\The [wp] already has \a [wp.welder] attached.")
+			to_chat(usr, "\The [wp] aha gia un \a [wp.welder] attaccato.")
 		else if(usr.unEquip(src, wp))
 			wp.welder = src
-			usr.visible_message("[usr] attaches \the [src] to \the [wp].", "You attach \the [src] to \the [wp].")
+			usr.visible_message("[usr] attacca \the [src] a \the [wp].", "Attacchi \the [src] a \the [wp].")
 			wp.update_icon()
 		return
 
@@ -67,15 +67,15 @@
 
 /obj/item/weapon/weldingtool/attackby(obj/item/W as obj, mob/user as mob)
 	if(welding)
-		to_chat(user, SPAN_DANGER("Stop welding first!"))
+		to_chat(user, SPAN_DANGER("Spegni la torcia fonditrice prima!"))
 		return
 
 	if(isScrewdriver(W))
 		status = !status
 		if(status)
-			to_chat(user, SPAN_NOTICE("You secure the welder."))
+			to_chat(user, SPAN_NOTICE("Metti in sicurezza la torcia fonditrice."))
 		else
-			to_chat(user, SPAN_NOTICE("The welder can now be attached and modified."))
+			to_chat(user, SPAN_NOTICE("La torcia fonditrice può ore essere attaccata e modificata."))
 		src.add_fingerprint(user)
 		return
 
@@ -91,15 +91,15 @@
 
 	if (istype(W, /obj/item/weapon/welder_tank))
 		if (tank)
-			to_chat(user, SPAN_WARNING("\The [src] already has a tank attached - remove it first."))
+			to_chat(user, SPAN_WARNING("\The [src] ha già una bomboletta di combustibile collegata, rimuovila!."))
 			return
 		if (user.get_active_hand() != src && user.get_inactive_hand() != src)
-			to_chat(user, SPAN_WARNING("You must hold the welder in your hands to attach a tank."))
+			to_chat(user, SPAN_WARNING("Devi tenere il fonditore in mano prima di attaccarci una bomboletta di combustibile."))
 			return
 		if (!user.unEquip(W, src))
 			return
 		tank = W
-		user.visible_message("[user] slots \a [W] into \the [src].", "You slot \a [W] into \the [src].")
+		user.visible_message("[user] inserisce \a [W] dentro \the [src].", "Inseriscit \a [W] dentro \the [src].")
 		w_class = tank.size_in_use
 		force = tank.unlit_force
 		update_icon()
@@ -111,14 +111,14 @@
 /obj/item/weapon/weldingtool/attack_hand(mob/user as mob)
 	if (tank && user.get_inactive_hand() == src)
 		if (!welding)
-			user.visible_message("[user] removes \the [tank] from \the [src].", "You remove \the [tank] from \the [src].")
+			user.visible_message("[user] rimuove \the [tank] da \the [src].", "Rimuovi \the [tank] da \the [src].")
 			user.put_in_hands(tank)
 			tank = null
 			w_class = initial(w_class)
 			force = initial(force)
 			update_icon()
 		else
-			to_chat(user, SPAN_DANGER("Turn off the welder first!"))
+			to_chat(user, SPAN_DANGER("Spegni il fonditore prima!"))
 
 	else
 		..()
@@ -138,13 +138,13 @@
 
 	if(istype(O, /obj/structure/reagent_dispensers/fueltank) && get_dist(src,O) <= 1 && !welding)
 		if(!tank)
-			to_chat(user, SPAN_WARNING("\The [src] has no tank attached!"))
+			to_chat(user, SPAN_WARNING("\The [src] non ha nessuna bomboletta attaccata!"))
 			return
 		if (!tank.can_refuel)
-			to_chat(user, SPAN_WARNING("\The [tank] does not have a refuelling port."))
+			to_chat(user, SPAN_WARNING("\The [tank] non ha una porta di rifornimento."))
 			return
 		O.reagents.trans_to_obj(tank, tank.max_fuel)
-		to_chat(user, SPAN_NOTICE("You refuel \the [tank]."))
+		to_chat(user, SPAN_NOTICE("Ricarichi \the [tank]."))
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 		return
 
@@ -179,7 +179,7 @@
 		return 1
 	else
 		if(M)
-			to_chat(M, SPAN_NOTICE("You need more [welding_resource] to complete this task."))
+			to_chat(M, SPAN_NOTICE("Ti serve più [welding_resource] per completare questa azione."))
 		return 0
 
 /obj/item/weapon/weldingtool/proc/burn_fuel(var/amount)
@@ -231,7 +231,7 @@
 
 	if(!welding && !waterproof && submerged())
 		if(M)
-			to_chat(M, SPAN_WARNING("You cannot light \the [src] underwater."))
+			to_chat(M, SPAN_WARNING("Non puoi accendere \the [src] in acqua! Idiota."))
 		return
 
 	var/turf/T = get_turf(src)
@@ -239,9 +239,9 @@
 	if(set_welding && !welding)
 		if (get_fuel() > 0)
 			if(M)
-				to_chat(M, SPAN_NOTICE("You switch the [src] on."))
+				to_chat(M, SPAN_NOTICE("Accendi il [src]."))
 			else if(T)
-				T.visible_message(SPAN_WARNING("\The [src] turns on."))
+				T.visible_message(SPAN_WARNING("\The [src] si accende."))
 			if (istype(src, /obj/item/weapon/weldingtool/electric))
 				src.force = 11
 				src.damtype = ELECTROCUTE
@@ -253,15 +253,15 @@
 			START_PROCESSING(SSobj, src)
 		else
 			if(M)
-				to_chat(M, SPAN_NOTICE("You need more [welding_resource] to complete this task."))
+				to_chat(M, SPAN_NOTICE("Ti serve più [welding_resource] per completare l'azione."))
 			return
 	//Otherwise
 	else if(!set_welding && welding)
 		STOP_PROCESSING(SSobj, src)
 		if(M)
-			to_chat(M, SPAN_NOTICE("You switch \the [src] off."))
+			to_chat(M, SPAN_NOTICE("Spegni \the [src]."))
 		else if(T)
-			T.visible_message(SPAN_WARNING("\The [src] turns off."))
+			T.visible_message(SPAN_WARNING("\The [src] si spegne."))
 		if (istype(src, /obj/item/weapon/weldingtool/electric))
 			src.force = initial(force)
 		else
@@ -279,14 +279,14 @@
 			return ..()
 
 		if(BP_IS_BRITTLE(S))
-			to_chat(user, SPAN_WARNING("\The [M]'s [S.name] is hard and brittle - \the [src]  cannot repair it."))
+			to_chat(user, SPAN_WARNING("\The [M]'s [S.name] è troppo danneggiata - \the [src]  non può ripararlo."))
 			return 1
 
 		if(!welding)
-			to_chat(user, SPAN_WARNING("You'll need to turn [src] on to patch the damage on [M]'s [S.name]!"))
+			to_chat(user, SPAN_WARNING("Dovrai accendere il [src] se vuoi riparare i danni su [M]'s [S.name]!"))
 			return 1
 
-		if(S.robo_repair(15, BRUTE, "some dents", src, user))
+		if(S.robo_repair(15, BRUTE, "alcuni bozzi", src, user))
 			remove_fuel(1, user)
 
 	else
@@ -356,7 +356,7 @@
 	force = 6
 	throwforce = 6
 	size_in_use = ITEM_SIZE_NORMAL
-	
+
 
 /obj/item/weapon/welder_tank/huge
 	name = "huge welding fuel tank"

@@ -1,7 +1,7 @@
 //generic procs copied from obj/effect/alien
 /obj/effect/spider
-	name = "web"
-	desc = "It's stringy and sticky."
+	name = "ragnatela"
+	desc = "E' piena di cavi ed appiccicosa."
 	icon = 'icons/effects/effects.dmi'
 	anchored = 1
 	density = 0
@@ -24,9 +24,9 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	if(W.attack_verb.len)
-		visible_message("<span class='warning'>\The [src] have been [pick(W.attack_verb)] with \the [W][(user ? " by [user]." : ".")]</span>")
+		visible_message("<span class='warning'>\The [src] è stato [pick(W.attack_verb)] con \the [W][(user ? " by [user]." : ".")]</span>")
 	else
-		visible_message("<span class='warning'>\The [src] have been attacked with \the [W][(user ? " by [user]." : ".")]</span>")
+		visible_message("<span class='warning'>\The [src] è stato attaccato con \the [W][(user ? " by [user]." : ".")]</span>")
 
 	var/damage = W.force / 4.0
 
@@ -71,15 +71,15 @@
 		return 1
 	else if(istype(mover, /mob/living))
 		if(prob(50))
-			to_chat(mover, "<span class='warning'>You get stuck in \the [src] for a moment.</span>")
+			to_chat(mover, "<span class='warning'>Ti blocchi nel \the [src] per un momento.</span>")
 			return 0
 	else if(istype(mover, /obj/item/projectile))
 		return prob(30)
 	return 1
 
 /obj/effect/spider/eggcluster
-	name = "egg cluster"
-	desc = "They seem to pulse slightly with an inner life."
+	name = "ammasso di uova"
+	desc = "Sembra esserci vita dentro ad esse."
 	icon_state = "eggs"
 	var/amount_grown = 0
 
@@ -113,8 +113,8 @@
 		qdel(src)
 
 /obj/effect/spider/spiderling
-	name = "spiderling"
-	desc = "It never stays still for long."
+	name = "ragnetto"
+	desc = "Non rimane mai fermo troppo a lungo."
 	icon_state = "guard"
 	anchored = 0
 	plane = OBJ_PLANE
@@ -190,7 +190,7 @@
 		..()
 
 /obj/effect/spider/spiderling/proc/die()
-	visible_message("<span class='alert'>[src] dies!</span>")
+	visible_message("<span class='alert'>[src] muore!</span>")
 	new /obj/effect/decal/cleanable/spiderling_remains(loc)
 	qdel(src)
 
@@ -208,7 +208,7 @@
 	if(check_vent(exit_vent))
 		return
 	if(prob(50))
-		src.visible_message("<span class='notice'>You hear something squeezing through the ventilation ducts.</span>",2)
+		src.visible_message("<span class='notice'>Si sente qualcosa strisciare attraverso i condotti di ventilazione.</span>",2)
 	forceMove(exit_vent)
 	addtimer(CALLBACK(src, .proc/end_vent_moving, exit_vent), travel_time)
 
@@ -258,7 +258,7 @@
 				var/target_atom = pick(nearby)
 				walk_to(src, target_atom, 5)
 				if(prob(10))
-					src.visible_message("<span class='notice'>\The [src] skitters[pick(" away"," around","")].</span>")
+					src.visible_message("<span class='notice'>\The [src] corre [pick(" via"," attorno","")].</span>")
 					// Reduces the risk of spiderlings hanging out at the extreme ranges of the shift range.
 					var/min_x = pixel_x <= -shift_range ? 0 : -2
 					var/max_x = pixel_x >=  shift_range ? 0 :  2
@@ -285,7 +285,7 @@
 			amount_grown = 20 //reset amount_grown so that people have some time to react to spiderlings before they grow big
 			O.implants -= src
 			forceMove(O.owner ? O.owner.loc : O.loc)
-			src.visible_message("<span class='warning'>\A [src] emerges from inside [O.owner ? "[O.owner]'s [O.name]" : "\the [O]"]!</span>")
+			src.visible_message("<span class='warning'>\A [src] emerge da dentro [O.owner ? "[O.owner]'s [O.name]" : "\the [O]"]!</span>")
 			if(O.owner)
 				O.owner.apply_damage(5, BRUTE, O.organ_tag)
 				O.owner.apply_damage(3, TOX, O.organ_tag)
@@ -293,16 +293,16 @@
 			O.owner.apply_damage(1, TOX, O.organ_tag)
 			if(world.time > last_itch + 30 SECONDS)
 				last_itch = world.time
-				to_chat(O.owner, "<span class='notice'>Your [O.name] itches...</span>")
+				to_chat(O.owner, "<span class='notice'>Il tuo [O.name] prude...</span>")
 	else if(prob(1))
-		src.visible_message("<span class='notice'>\The [src] skitters.</span>")
+		src.visible_message("<span class='notice'>\The [src] striscia.</span>")
 
 	if(amount_grown > 0)
 		amount_grown += rand(0,2)
 
 /obj/effect/decal/cleanable/spiderling_remains
-	name = "spiderling remains"
-	desc = "Green squishy mess."
+	name = "resti di ragnetto"
+	desc = "Cumulo di resti verdi e appiccicosi."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenshatter"
 	anchored = 1
@@ -310,8 +310,8 @@
 	layer = BLOOD_LAYER
 
 /obj/effect/spider/cocoon
-	name = "cocoon"
-	desc = "Something wrapped in silky spider web."
+	name = "bozzolo"
+	desc = "Un ragno ha avvolto una preda qui dentro."
 	icon_state = "cocoon1"
 	health = 60
 
@@ -320,7 +320,7 @@
 	icon_state = pick("cocoon1","cocoon2","cocoon3")
 
 /obj/effect/spider/cocoon/Destroy()
-	src.visible_message("<span class='warning'>\The [src] splits open.</span>")
+	src.visible_message("<span class='warning'>\The [src] si apre.</span>")
 	for(var/atom/movable/A in contents)
 		A.dropInto(loc)
 	return ..()

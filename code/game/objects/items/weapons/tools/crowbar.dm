@@ -1,6 +1,6 @@
 /obj/item/weapon/crowbar
-	name = "crowbar"
-	desc = "A heavy crowbar of solid steel, good and solid in your hand."
+	name = "piede di porco"
+	desc = "Un pesante piede di porco in acciaio massiccio, buono e solido in mano."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -15,15 +15,15 @@
 	origin_tech = list(TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 140)
 	center_of_mass = "x=16;y=20"
-	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
+	attack_verb = list("attaccato", "colpito", "sbattuto", "brutalizzato", "aggredito")
 
 /obj/item/weapon/crowbar/red
 	icon_state = "red_crowbar"
 	item_state = "crowbar_red"
 
 /obj/item/weapon/crowbar/prybar
-	name = "pry bar"
-	desc = "A steel bar with a wedge. It comes in a variety of configurations and colours - collect them all."
+	name = "palanchino"
+	desc = "Una barra d'acciaio con una zeppa. E disponibile in una varieta di configurazioni e colori: collezionali tutti."
 	icon_state = "prybar_preview"
 	item_state = "crowbar"
 	force = 4

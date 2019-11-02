@@ -1,6 +1,6 @@
 /obj/item/weapon/wrench
-	name = "wrench"
-	desc = "A good, durable combination wrench, with self-adjusting, universal open- and ring-end mechanisms to match a wide variety of nuts and bolts."
+	name = "chiave inglese"
+	desc = "Una chiave combinata buona e durevole, con meccanismi universali auto-regolanti a estremita aperta e ad anello per adattarsi a un'ampia varieta di dadi e bulloni."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "wrench"
 	item_state = "wrench"
@@ -12,7 +12,7 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 150)
 	center_of_mass = "x=17;y=16"
-	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
+	attack_verb = list("spaccato", "colpito", "sbattuto", "brutalizzato")
 
 /obj/item/weapon/wrench/Initialize()
 	icon_state = "wrench[pick("","_red","_black","_green","_blue")]"

@@ -1,6 +1,6 @@
 /obj/item/weapon/screwdriver
-	name = "screwdriver"
-	desc = "Your archetypal flathead screwdriver, with a nice, heavy polymer handle."
+	name = "cacciavite"
+	desc = "Il tuo cacciavite a punta piatta archetipico, con una bella e pesante impugnatura in polimero."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "screwdriver_preview"
 	item_state = "screwdriver"
@@ -13,7 +13,7 @@
 	throw_range = 5
 	matter = list(MATERIAL_STEEL = 75)
 	center_of_mass = "x=16;y=7"
-	attack_verb = list("stabbed")
+	attack_verb = list("pugnalato")
 	lock_picking_level = 5
 	sharp = TRUE
 
