@@ -1,32 +1,32 @@
 /datum/category_item/underwear/bottom
 	underwear_gender = PLURAL
-	underwear_name = "underwear"
+	underwear_name = "biancheria intima"
 	underwear_type = /obj/item/underwear/bottom
 
 /datum/category_item/underwear/bottom/none
-	name = "None"
+	name = "Nessuna"
 	always_last = TRUE
 	underwear_type = null
 
 /datum/category_item/underwear/bottom/briefs
-	name = "Briefs"
-	underwear_name = "briefs"
-	icon_state = "briefs"
+	name = "Slip"
+	underwear_name = "slip"
+	icon_state = "slip"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/briefs/is_default(var/gender)
 	return gender != FEMALE
 
 /datum/category_item/underwear/bottom/panties_noback
-	name = "Panties, noback"
-	underwear_name = "panties"
-	icon_state = "panties_noback"
+	name = "tanga"
+	underwear_name = "tanga"
+	icon_state = "tanga"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/boxers_loveheart
-	name = "Boxers, Loveheart"
+	name = "Boxers, Cuoricini"
 	underwear_name = "boxers"
-	icon_state = "boxers_loveheart"
+	icon_state = "boxers_cuoricini"
 
 /datum/category_item/underwear/bottom/boxers
 	name = "Boxers"
@@ -35,23 +35,23 @@
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/boxers_green_and_blue
-	name = "Boxers, green & blue striped"
+	name = "Boxers, strisce vedri&blu"
 	underwear_name = "boxers"
-	icon_state = "boxers_green_and_blue"
+	icon_state = "boxers_verdi_e_blu"
 
 /datum/category_item/underwear/bottom/panties
-	name = "Panties"
-	underwear_name = "panties"
-	icon_state = "panties"
+	name = "mutandine"
+	underwear_name = "mutandine"
+	icon_state = "mutandine"
 	has_color = TRUE
 
 /datum/category_item/underwear/bottom/panties/is_default(var/gender)
 	return gender == FEMALE
 
 /datum/category_item/underwear/bottom/lacy_thong
-	name = "Lacy thong"
-	underwear_name = "thong"
-	icon_state = "lacy_thong"
+	name = "Perizoma, Luna"
+	underwear_name = "luna"
+	icon_state = "perizoma_luna"
 
 /datum/category_item/underwear/bottom/lacy_thong_alt
 	name = "Lacy thong, alt"

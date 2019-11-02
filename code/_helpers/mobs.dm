@@ -53,9 +53,9 @@ proc/random_name(gender, species = SPECIES_HUMAN)
 
 proc/random_skin_tone(var/datum/species/current_species)
 	var/species_tone = current_species ? 35 - current_species.max_skin_tone() : -185
-	switch(pick(60;"caucasian", 15;"afroamerican", 10;"african", 10;"latino", 5;"albino"))
-		if("caucasian")		. = -10
-		if("afroamerican")	. = -115
+	switch(pick(60;"caucasico", 15;"afroamericano", 10;"africano", 10;"latino", 5;"albino"))
+	if("caucasico")		. = -10
+		if("afroamericano")	. = -115
 		if("african")		. = -165
 		if("latino")		. = -55
 		if("albino")		. = 34
@@ -66,28 +66,27 @@ proc/random_skin_tone(var/datum/species/current_species)
 proc/skintone2racedescription(tone)
 	switch (tone)
 		if(30 to INFINITY)		return "albino"
-		if(20 to 30)			return "pale"
-		if(5 to 15)				return "light skinned"
-		if(-10 to 5)			return "white"
-		if(-25 to -10)			return "tan"
-		if(-45 to -25)			return "darker skinned"
-		if(-65 to -45)			return "brown"
-		if(-INFINITY to -65)	return "black"
-		else					return "unknown"
+		if(20 to 30)			return "pallido"
+		if(5 to 15)				return "carnagione chiara"
+		if(-10 to 5)			return "bianco"
+		if(-25 to -10)			return "abbronzato"
+		if(-45 to -25)			return "carnagione scura"
+		if(-65 to -45)			return "marrone"
+		if(-INFINITY to -65)	return "nero"
+		else					return "sconosciuto"
 
 proc/age2agedescription(age)
 	switch(age)
-		if(0 to 1)			return "infant"
+		if(0 to 1)			return "bambino"
 		if(1 to 3)			return "toddler"
-		if(3 to 13)			return "child"
-		if(13 to 19)		return "teenager"
-		if(19 to 30)		return "young adult"
-		if(30 to 45)		return "adult"
-		if(45 to 60)		return "middle-aged"
-		if(60 to 70)		return "aging"
-		if(70 to INFINITY)	return "elderly"
-		else				return "unknown"
-
+		if(3 to 13)			return "bambino"
+		if(13 to 19)		return "adolescente"
+		if(19 to 30)		return "giovane adulto"
+		if(30 to 45)		return "adulto"
+		if(45 to 60)		return "mezza età"
+		if(60 to 70)		return "invecchiamento"
+		if(70 to INFINITY)	return "anziano"
+		else				return "sconosciuto"
 /proc/RoundHealth(health)
 	var/list/icon_states = icon_states('icons/mob/hud_med.dmi')
 	for(var/icon_state in icon_states)
