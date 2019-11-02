@@ -1,6 +1,6 @@
 /obj/item/weapon/wirecutters
-	name = "wirecutters"
-	desc = "A special pair of pliers with cutting edges. Various brackets and manipulators built into the handle allow it to repair severed wiring."
+	name = "tagliafili"
+	desc = "Una speciale coppia di pinze con taglienti. Diverse staffe e manipolatori integrati nell'impugnatura consentono di riparare cavi interrotti."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "cutters_preview"
 	item_state = "cutters"
@@ -13,7 +13,7 @@
 	origin_tech = list(TECH_MATERIAL = 1, TECH_ENGINEERING = 1)
 	matter = list(MATERIAL_STEEL = 80)
 	center_of_mass = "x=18;y=10"
-	attack_verb = list("pinched", "nipped")
+	attack_verb = list("tagliato", "reciso")
 	sharp = 1
 	edge = 1
 
@@ -31,9 +31,9 @@
 
 /obj/item/weapon/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
 	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/weapon/handcuffs/cable)))
-		usr.visible_message("\The [usr] cuts \the [C]'s restraints with \the [src]!",\
-		"You cut \the [C]'s restraints with \the [src]!",\
-		"You hear cable being cut.")
+		usr.visible_message("\The [usr] taglia le manette di [C] con \the [src]!",\
+		"Tagli le manette di [C] con \the [src]!",\
+		"Sneti qualcuno che taglia dei cavi.")
 		C.handcuffed = null
 		if(C.buckled && C.buckled.buckle_require_restraints)
 			C.buckled.unbuckle_mob()
