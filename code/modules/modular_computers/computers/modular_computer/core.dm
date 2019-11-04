@@ -89,11 +89,11 @@
 
 /obj/item/modular_computer/emag_act(var/remaining_charges, var/mob/user)
 	if(computer_emagged)
-		to_chat(user, "\The [src] was already emagged.")
+		to_chat(user, "\The [src] era già hackerato.")
 		return NO_EMAG_ACT
 	else
 		computer_emagged = 1
-		to_chat(user, "You emag \the [src]. It's screen briefly shows a \"OVERRIDE ACCEPTED: New software downloads available.\" message.")
+		to_chat(user, "Hackeri \the [src]. Il suo schermo mostra brevemente la scritta \"OVERRIDE ACCETTATO: Nuovo software da scaricare disponibile.\" message.")
 		return 1
 
 /obj/item/modular_computer/on_update_icon()
