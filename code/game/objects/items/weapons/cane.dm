@@ -37,7 +37,7 @@
 
 /obj/item/weapon/cane/concealed/attackby(var/obj/item/weapon/material/knife/folding/W, var/mob/user)
 	if(!src.concealed_blade && istype(W) && user.unEquip(W, src))
-		user.visible_message("<span class='warning'>[user] ha sguainato \a [W] dentro [src]!</span>", "Tu sguaini \the [W] dentro [src].")
+		user.visible_message("<span class='warning'>[user] ha sguaina \a [W] dentro [src]!</span>", "Tu sguaina \the [W] dentro [src].")
 		src.concealed_blade = W
 		update_icon()
 		user.update_inv_l_hand()
