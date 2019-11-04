@@ -1,8 +1,8 @@
 // A vendor machine for modular computer portable devices - Laptops and Tablets
 
 /obj/machinery/lapvend
-	name = "computer vendor"
-	desc = "A vending machine with a built-in microfabricator, capable of dispensing various computers."
+	name = "distributore di computers"
+	desc = "Un venditore automatico di computer, in grado di fornire portatili e tablets."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "laptop"
 	layer = BELOW_OBJ_LAYER
@@ -291,7 +291,7 @@ obj/machinery/lapvend/attackby(obj/item/weapon/W as obj, mob/user as mob)
 				fabricated_tablet.forceMove(src.loc)
 				fabricated_tablet.update_verbs()
 				fabricated_tablet = null
-			ping("Enjoy your new product!")
+			ping("Divertiti col tuo nuovo prodotto!")
 			state = 3
 			return 1
 		return 0
@@ -301,24 +301,24 @@ obj/machinery/lapvend/attackby(obj/item/weapon/W as obj, mob/user as mob)
 // Simplified payment processing, returns 1 on success.
 /obj/machinery/lapvend/proc/process_payment(var/obj/item/weapon/card/id/I, var/obj/item/ID_container)
 	if(I==ID_container || ID_container == null)
-		visible_message("<span class='info'>\The [usr] swipes \the [I] through \the [src].</span>")
+		visible_message("<span class='info'>\The [usr] striscia \the [I] su \the [src].</span>")
 	else
-		visible_message("<span class='info'>\The [usr] swipes \the [ID_container] through \the [src].</span>")
+		visible_message("<span class='info'>\The [usr] striscia \the [ID_container] su \the [src].</span>")
 	var/datum/money_account/customer_account = I ? get_account(I.associated_account_number) : null
 	if (!customer_account || customer_account.suspended)
-		ping("Connection error. Unable to connect to account.")
+		ping("Errore di connessione. Impossibile connettersi all'account.")
 		return 0
 
 	if(customer_account.security_level != 0) //If card requires pin authentication (ie seclevel 1 or 2)
-		var/attempt_pin = input("Enter pin code", "Vendor transaction") as num
+		var/attempt_pin = input("Inserisci codice pin", "Transazione vendor") as num
 		customer_account = attempt_account_access(I.associated_account_number, attempt_pin, 2)
 
 		if(!customer_account)
-			ping("Unable to access account: incorrect credentials.")
+			ping("Impossibile accedere all'account: credenziali errate.")
 			return 0
 
-	if(customer_account.withdraw(total_price, "Purchase of [(devtype == 1) ? "laptop computer" : "tablet microcomputer"].", "Computer Manufacturer (via [src.name])"))
+	if(customer_account.withdraw(total_price, "Acquisto di [(devtype == 1) ? "laptop computer" : "tablet microcomputer"].", "Produttore: (via [src.name])"))
 		return 1
 	else
-		ping("Transaction failed! Please try again.")
+		ping("Transazione fallita! Riprova più tardi perfavore.")
 		return 0
