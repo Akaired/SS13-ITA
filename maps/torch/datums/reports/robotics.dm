@@ -1,20 +1,20 @@
 /datum/computer_file/report/recipient/borging
 	form_name = "CC-SGF-09"
-	title = "Cyborgification Contract"
+	title = "Contratto di Cyborgificazione"
 	logo = "\[solcrest\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/borging/generate_fields()
 	..()
 	var/list/xo_fields = list()
-	add_field(/datum/report_field/text_label/header, "SEV Torch - Office of the Executive Officer")
-	add_field(/datum/report_field/people/from_manifest, "Name (XO)")
-	add_field(/datum/report_field/people/from_manifest, "Name (subject)", required = 1)
-	add_field(/datum/report_field/date, "Date filed")
-	add_field(/datum/report_field/time, "Time filed")
-	add_field(/datum/report_field/text_label/instruction, "I, undersigned, hereby agree to willingly undergo a Regulation Lobotimization with intention of cyborgification or AI assimilation, and I am aware of all the consequences of such act. I also understand that this operation may be irreversible, and that my employment contract will be terminated.")
-	add_field(/datum/report_field/signature, "Subject's signature")
-	xo_fields += add_field(/datum/report_field/signature, "Executive Officer's signature")
-	xo_fields += add_field(/datum/report_field/options/yes_no, "Approved")
+	add_field(/datum/report_field/text_label/header, "SEV Torcia - Ufficio dell'Ufficiale Esecutivo")
+	add_field(/datum/report_field/people/from_manifest, "Nome (UE)")
+	add_field(/datum/report_field/people/from_manifest, "Name (soggetto)", required = 1)
+	add_field(/datum/report_field/date, "Data")
+	add_field(/datum/report_field/time, "Ora")
+	add_field(/datum/report_field/text_label/instruction, "Io, qui indicato, dichiaro in questa sede di attraversare volontariamente una procedura di Regolare Lobotomizzazione con intenzione di Cyborgificazione o Assimilazione nella Matrice. Sono consapevole di tutte le conseguenze di tale atto. Comprendo inoltre che questa operazione potrebbe essere irreversibile, e che il mio contratto di impiego sarà terminato. Qui rinuncio a tutti i miei diritti umani, cedendo ogni responsabilità e controllo al mio Cyborgificatore, e chi per suo conto..")
+	add_field(/datum/report_field/signature, "Firma del soggetto")
+	xo_fields += add_field(/datum/report_field/signature, "Firma dell'Ufficiale Esecutivo")
+	xo_fields += add_field(/datum/report_field/options/yes_no, "Approvato")
 	for(var/datum/report_field/field in xo_fields)
 		field.set_access(access_edit = access_hop)

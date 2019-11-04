@@ -1,5 +1,5 @@
 /datum/goal/clean
-	completion_message = "Things are looking a lot nicer now."
+	completion_message = "Ora sembra tutto più pulito."
 	var/cleaned = 0
 	var/need_cleaned
 

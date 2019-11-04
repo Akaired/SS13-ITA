@@ -3,49 +3,49 @@
 
 /datum/computer_file/report/recipient/exp/fauna
 	form_name = "SCG-EXP-19f"
-	title = "Alien Fauna Report"
+	title = "Rapporto Fauna Aliena"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/exp/fauna/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "SEV Torch Expeditions")
-	add_field(/datum/report_field/text_label/instruction, "The following is to be filled out by members of a Expedition team after discovery and study of new alien life forms.")
+	add_field(/datum/report_field/text_label/header, "Spedizioni della SEV Torcia")
+	add_field(/datum/report_field/text_label/instruction, "Ciò che segue è un rapporto che dovrebbe venir compilato dai membri di un Team Esplorativo dopo la scoperta e lo studio di una forma di vita aliena.")
 
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/people/list_from_manifest, "Personnel Involved")
-	add_field(/datum/report_field/pencode_text, "Anatomy/Appearance")
-	add_field(/datum/report_field/pencode_text, "Locomotion")
-	add_field(/datum/report_field/pencode_text, "Diet")
+	add_field(/datum/report_field/date, "Data")
+	add_field(/datum/report_field/people/list_from_manifest, "Personale Coinvolto")
+	add_field(/datum/report_field/pencode_text, "Anatomia/Fattezze")
+	add_field(/datum/report_field/pencode_text, "Locomozione")
+	add_field(/datum/report_field/pencode_text, "Dieta")
 	add_field(/datum/report_field/pencode_text, "Habitat")
-	add_field(/datum/report_field/simple_text, "Homeworld")
-	add_field(/datum/report_field/pencode_text, "Behavior")
-	add_field(/datum/report_field/pencode_text, "Defense/Offense")
-	add_field(/datum/report_field/pencode_text, "Special Characteristic(s)")
-	add_field(/datum/report_field/pencode_text, "Classification")
+	add_field(/datum/report_field/simple_text, "Pianeta di origine")
+	add_field(/datum/report_field/pencode_text, "Comportamento")
+	add_field(/datum/report_field/pencode_text, "Defesa/Offesa")
+	add_field(/datum/report_field/pencode_text, "Caratteristica/e speciale/i")
+	add_field(/datum/report_field/pencode_text, "Classificazione")
 
-	add_field(/datum/report_field/text_label/instruction, "On completion of this form and form approval, the Chief Science Officer should fax the form to both the Corporate Liaison and the Commanding Officer, as well as keep a copy on file in their Office alongside other mission reports.")
+	add_field(/datum/report_field/text_label/instruction, "Dopo il completamento e approvazione di questo report, l'Ufficiale Scientifico Capo dovrebbe inviarlo sotto forma di fax sia al Rappresentante Sindacale che all'Ufficiale Comandante, oltre a tenerne una copia nel suo ufficio assieme ad altri rapporti spedizionari.")
 
 /datum/computer_file/report/recipient/exp/planet
 	form_name = "SCG-EXP-17"
-	title = "Exoplanet Report"
+	title = "Rapporto Esopianeta"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/exp/planet/generate_fields()
 	..()
-	add_field(/datum/report_field/text_label/header, "SEV Torch Expeditions")
-	add_field(/datum/report_field/text_label/instruction, "The following is to be filled out by members of a Expedition team after an Expedition to an uncharted Exoplanet.")
+	add_field(/datum/report_field/text_label/header, "Spedizioni della SEV Torcia")
+	add_field(/datum/report_field/text_label/instruction, "Ciò che segue deve essere compilato da membri di un Team di Esplorazione dopo una Spedizione su di un Esopianeta non esplorato.")
 
-	add_field(/datum/report_field/date, "Date")
-	add_field(/datum/report_field/simple_text, "Planet Name")
-	add_field(/datum/report_field/people/list_from_manifest, "Personnel Involved")
-	add_field(/datum/report_field/pencode_text, "Terrain Information")
-	add_field(/datum/report_field/simple_text, "Habitability")
-	add_field(/datum/report_field/pencode_text, "Summary on Fauna")
-	add_field(/datum/report_field/pencode_text, "Summary on Flora")
-	add_field(/datum/report_field/pencode_text, "Points of Interest")
-	add_field(/datum/report_field/pencode_text, "Observations")
+	add_field(/datum/report_field/date, "Data")
+	add_field(/datum/report_field/simple_text, "Nome del Pianeta")
+	add_field(/datum/report_field/people/list_from_manifest, "Personale Coinvolto")
+	add_field(/datum/report_field/pencode_text, "Informazioni Geografiche")
+	add_field(/datum/report_field/simple_text, "Habitabilità")
+	add_field(/datum/report_field/pencode_text, "Resoconto Fauna")
+	add_field(/datum/report_field/pencode_text, "Resoconto Flora")
+	add_field(/datum/report_field/pencode_text, "Punti di Interesse")
+	add_field(/datum/report_field/pencode_text, "Osservazioni")
 
-	add_field(/datum/report_field/text_label/instruction, "On completion of this form and form approval, the Chief Science Officer should fax the form to both the Corporate Liaison and the Commanding Officer, as well as keep a copy on file in their Office alongside other mission reports.")
+	add_field(/datum/report_field/text_label/instruction, "Dopo il completamento e approvazione di questo report, l'Ufficiale Scientifico Capo dovrebbe inviarlo sotto forma di fax sia al Rappresentante Sindacale che all'Ufficiale Comandante, oltre a tenerne una copia nel suo ufficio assieme ad altri rapporti spedizionari.")
 
 /datum/computer_file/report/recipient/shuttle/post_flight
 	logo = "\[eclogo\]"

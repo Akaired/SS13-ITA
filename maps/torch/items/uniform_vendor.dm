@@ -1,6 +1,6 @@
 /obj/machinery/uniform_vendor
-	name = "uniform vendor"
-	desc= "A uniform vendor for utility, service, and dress uniforms."
+	name = "distributore di uniformi"
+	desc= "Un distributore automatico per ogni occasione."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "uniform"
 	layer = BELOW_OBJ_LAYER
@@ -34,13 +34,13 @@
 	dat += "User ID: <a href='byond://?src=\ref[src];ID=1'>[ID ? "[ID.registered_name], [ID.military_rank], [ID.military_branch]" : "--------"]</a>"
 	dat += "<hr>"
 	if(!ID)
-		dat += "Insert your ID card to proceed."
+		dat += "Inserisci la tua tessera ID per continuare."
 	else
 		var/datum/job/job = SSjobs.get_by_path(ID.job_access_type)
 		if(job)
 			uniforms = find_uniforms(ID.military_rank, ID.military_branch, job.department_flag)
 		for(var/T in uniforms)
-			dat += "<b>[T]</b> <a href='byond://?src=\ref[src];get_all=[T]'>Select All</a>"
+			dat += "<b>[T]</b> <a href='byond://?src=\ref[src];get_all=[T]'>Seleziona Tutto</a>"
 			var/list/uniform = uniforms[T]
 			for(var/piece in uniform)
 				if(piece)
@@ -52,7 +52,7 @@
 					else
 						dat += "[sanitize(initial(C.name))] (ISSUED)"
 			dat += "<hr>"
-		dat += "<a href='byond://?src=\ref[src];vend=[1]'>Dispense</a>"
+		dat += "<a href='byond://?src=\ref[src];vend=[1]'>Dispensa</a>"
 	dat = jointext(dat,"<br>")
 	var/datum/browser/popup = new(user, "Uniform Dispenser","Uniform Dispenser", 300, 700, src)
 	popup.set_content(dat)
