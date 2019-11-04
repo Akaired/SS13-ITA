@@ -1,14 +1,14 @@
 
 /datum/computer_file/report/recipient/crew_transfer
 	form_name = "CTA-SGF-01"
-	title = "Crew Transfer Application"
+	title = "Domanda Trasferimento Equipaggio"
 	logo = "\[solcrest\]\[logo\]"
 	available_on_ntnet = 1
 
 /datum/computer_file/report/recipient/crew_transfer/generate_fields()
 	..()
 	var/list/xo_fields = list()
-	add_field(/datum/report_field/text_label/header, "SEV Torch - Office of the Executive Officer")
+	add_field(/datum/report_field/text_label/header, "SEV Torcia - Office of the Executive Officer")
 	add_field(/datum/report_field/people/from_manifest, "Name (XO)")
 	add_field(/datum/report_field/people/from_manifest, "Name (applicant)", required = 1)
 	add_field(/datum/report_field/date, "Date filed")

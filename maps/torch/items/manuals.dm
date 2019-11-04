@@ -1,9 +1,9 @@
 /obj/item/weapon/book/manual/solgov_law
-	name = "Sol Central Government Law"
-	desc = "A brief overview of SolGov Law."
+	name = "Costituzione del Governo Centrale del Sistema Solare"
+	desc = "Una raccolta di legge SolGov."
 	icon_state = "bookSolGovLaw"
-	author = "The Sol Central Government"
-	title = "Sol Central Government Law"
+	author = "Governo Centrale del Sistema Solare"
+	title = "Costituzione del Governo Centrale del Sistema Solare"
 
 /obj/item/weapon/book/manual/solgov_law/Initialize()
 	. = ..()
@@ -22,11 +22,11 @@
 
 
 /obj/item/weapon/book/manual/military_law
-	name = "The Sol Code of Military Justice"
-	desc = "A brief overview of military law."
+	name = "Codice di Giustizia Militare Solariana"
+	desc = "Una raccolta di legge militare."
 	icon_state = "bookSolGovLaw"
-	author = "The Sol Central Government"
-	title = "The Sol Code of Military Justice"
+	author = "Governo Centrale del Sistema Solare"
+	title = "Codice di Giustizia Militare Solariana"
 
 /obj/item/weapon/book/manual/military_law/Initialize()
 	. = ..()
@@ -44,11 +44,11 @@
 		"}
 
 /obj/item/weapon/book/manual/sol_sop
-	name = "Standard Operating Procedure"
-	desc = "SOP aboard the SEV Torch."
+	name = "Procedure Operative Standard"
+	desc = "SOP a bordo della SEV Torcia."
 	icon_state = "booksolregs"
-	author = "The Sol Central Government"
-	title = "Standard Operating Procedure"
+	author = "Governo Centrale del Sistema Solare"
+	title = "Procedure Operative Standard"
 
 /obj/item/weapon/book/manual/sol_sop/Initialize()
 	. = ..()
@@ -68,7 +68,7 @@
 /obj/item/weapon/folder/nt/rd
 
 /obj/item/weapon/folder/envelope/blanks
-	desc = "A thick envelope. A large corporate logo is stamped in the corner, along with 'CONFIDENTIAL'."
+	desc = "Una busta spessa. Un grande logo aziendale e impresso nell'angolo, insieme a 'RISERVATO'."
 
 /obj/item/weapon/folder/envelope/blanks/Initialize()
 	. = ..()
