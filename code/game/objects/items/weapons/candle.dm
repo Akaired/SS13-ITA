@@ -1,6 +1,6 @@
 /obj/item/weapon/flame/candle
-	name = "candle"
-	desc = "A small pillar candle. Its specially-formulated fuel-oxidizer wax mixture allows continued combustion in airless environments."
+	name = "candla ossidante"
+	desc = "Una piccola candela verticale. Il suo combustibile ossidante speciale permette una combustine continua anche in ambienti senza aria."
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle1"
 	item_state = "candle1"
@@ -44,7 +44,7 @@
 /obj/item/weapon/flame/candle/proc/light(mob/user)
 	if(!lit)
 		lit = 1
-		visible_message("<span class='notice'>\The [user] lights the [name].</span>")
+		visible_message("<span class='notice'>\The [user] accende the [name].</span>")
 		set_light(0.3, 0.1, 4, 2)
 		START_PROCESSING(SSobj, src)
 
@@ -69,8 +69,8 @@
 		set_light(0)
 
 /obj/item/weapon/storage/candle_box
-	name = "candle pack"
-	desc = "A pack of unscented candles in a variety of colours."
+	name = "pacchetto di candele"
+	desc = "Un pacchetto di candele inodore."
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candlebox"
 	throwforce = 2
