@@ -33,7 +33,7 @@
 	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/weapon/handcuffs/cable)))
 		usr.visible_message("\The [usr] taglia le manette di [C] con \the [src]!",\
 		"Tagli le manette di [C] con \the [src]!",\
-		"Sneti qualcuno che taglia dei cavi.")
+		"Senti qualcuno che taglia dei cavi.")
 		C.handcuffed = null
 		if(C.buckled && C.buckled.buckle_require_restraints)
 			C.buckled.unbuckle_mob()
